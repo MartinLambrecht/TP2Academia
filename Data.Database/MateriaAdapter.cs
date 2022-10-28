@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Business.Entities;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace Data.Database
 {
-    public class MateriaAdapter: Adapter
+    public class MateriaAdapter : Adapter
     {
         private static List<Materia> _Materias;
 

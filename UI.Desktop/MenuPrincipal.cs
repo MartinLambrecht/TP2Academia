@@ -29,7 +29,6 @@ namespace UI.Desktop
 
         private void modificarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //TODO: Inicio de sesion que inicialice usuarioLogueado
             UsuarioDesktop usuarioDesk = new UsuarioDesktop(usuarioLogueado.ID, ApplicationForm.ModoForm.Modificacion);
             usuarioDesk.ShowDialog();
         }

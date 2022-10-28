@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Entities;
+using Business.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business.Entities;
-using Business.Logic;
 
 namespace UI.Desktop
 {
@@ -21,7 +21,7 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        public ComisionDesktop(ModoForm modo): this()
+        public ComisionDesktop(ModoForm modo) : this()
         {
             this.modo = modo;
             MapearDeDatos();
@@ -131,10 +131,10 @@ namespace UI.Desktop
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             bool ok = Validar();
-            if (ok) 
-            { 
-                GuardarCambios(); 
-                this.Close(); 
+            if (ok)
+            {
+                GuardarCambios();
+                this.Close();
             }
         }
 

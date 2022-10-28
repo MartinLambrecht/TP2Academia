@@ -1,22 +1,23 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Business.Entities;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace Data.Database
 {
-    public class CursoAdapter: Adapter
+    public class CursoAdapter : Adapter
     {
 
         private static List<Curso> _Cursos;
 
         private static List<Curso> Cursos
         {
-            get {
+            get
+            {
                 if (_Cursos == null)
                 {
                     _Cursos = new List<Business.Entities.Curso>();
@@ -57,7 +58,7 @@ namespace Data.Database
                 SqlCommand cmdCursos = new SqlCommand("select * from cursos", sqlConn);
 
                 SqlDataReader drCursos = cmdCursos.ExecuteReader();
-                
+
                 while (drCursos.Read())
                 {
                     Curso cur = new Curso();
@@ -74,7 +75,7 @@ namespace Data.Database
 
                 return cursos;
             }
-            catch (Exception Ex) 
+            catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar lista de cursos", Ex);
                 throw ExcepcionManejada;
@@ -90,7 +91,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdCurso = new SqlCommand("select * from cursos where id_curso = @id",sqlConn);
+                SqlCommand cmdCurso = new SqlCommand("select * from cursos where id_curso = @id", sqlConn);
 
                 cmdCurso.Parameters.Add("@id", SqlDbType.Int).Value = ID;
 
@@ -146,7 +147,7 @@ namespace Data.Database
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("UPDATE cursos SET anio_calendario = @anio_calendario, cupo = @cupo" +
                 "WHERE id_curso=@id", sqlConn);
-                
+
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = curso.ID;
                 cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
@@ -168,8 +169,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("insert into cursos(anio_calendario,cupo)" + 
-                 "values (@anio_calendario, @cupo)" + 
+                SqlCommand cmdSave = new SqlCommand("insert into cursos(anio_calendario,cupo)" +
+                 "values (@anio_calendario, @cupo)" +
                   "select @@identity", sqlConn);
                 cmdSave.Parameters.Add("anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("cupo", SqlDbType.Int).Value = curso.Cupo;
@@ -190,7 +191,7 @@ namespace Data.Database
 
         public void Save(Curso curso)
         {
-            if(curso.State == BusinessEntity.States.Deleted)
+            if (curso.State == BusinessEntity.States.Deleted)
             {
                 this.Delete(curso.ID);
             }

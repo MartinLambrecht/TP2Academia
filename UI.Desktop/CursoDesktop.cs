@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Entities;
+using Business.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business.Entities;
-using Business.Logic;
 
 namespace UI.Desktop
 {
@@ -21,7 +21,7 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        public CursoDesktop(ModoForm modo): this() //este constructor servira para las altas
+        public CursoDesktop(ModoForm modo) : this() //este constructor servira para las altas
         {
             this.modo = modo;
             MapearDeDatos();
@@ -97,7 +97,7 @@ namespace UI.Desktop
             MapearADatos();
             CursoLogic cl = new CursoLogic();
             cl.Save(CursoActual);
-            
+
         }
 
         private new bool Validar()

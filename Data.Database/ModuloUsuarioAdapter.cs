@@ -27,13 +27,13 @@ namespace Data.Database
 
                     moduloUsuarioActual.ID = (int)drModuloUsuario["id_modulo_usuario"];
                     moduloUsuarioActual.IDModulo = (int)drModuloUsuario["id_modulo"];
-                    moduloUsuarioActual.IDUsuario= (int)drModuloUsuario["id_usuario"];
+                    moduloUsuarioActual.IDUsuario = (int)drModuloUsuario["id_usuario"];
 
                     moduloUsuarioActual.PermiteAlta = (bool)drModuloUsuario["alta"];
                     moduloUsuarioActual.PermiteBaja = (bool)drModuloUsuario["baja"];
                     moduloUsuarioActual.PermiteModificacion = (bool)drModuloUsuario["modificacion"];
                     moduloUsuarioActual.PermiteConsulta = (bool)drModuloUsuario["consulta"];
-                    
+
                     listaModuloUsuario.Add(moduloUsuarioActual);
                 }
                 drModuloUsuario.Close();
@@ -118,12 +118,12 @@ namespace Data.Database
                 cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = moduloUsuarioActual.ID;
                 cmdUpdate.Parameters.Add("@id_modulo", SqlDbType.Int).Value = moduloUsuarioActual.IDModulo;
                 cmdUpdate.Parameters.Add("@id_usuario", SqlDbType.Int).Value = moduloUsuarioActual.IDUsuario;
-                
+
                 cmdUpdate.Parameters.Add("@alta", SqlDbType.Bit).Value = moduloUsuarioActual.PermiteAlta;
                 cmdUpdate.Parameters.Add("@baja", SqlDbType.Bit).Value = moduloUsuarioActual.PermiteBaja;
                 cmdUpdate.Parameters.Add("@modificacion", SqlDbType.Bit).Value = moduloUsuarioActual.PermiteModificacion;
                 cmdUpdate.Parameters.Add("@consulta", SqlDbType.Bit).Value = moduloUsuarioActual.PermiteConsulta;
-                
+
                 cmdUpdate.ExecuteNonQuery();
             }
             catch (Exception ex)

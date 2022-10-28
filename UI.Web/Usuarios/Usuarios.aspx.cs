@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Business.Entities;
+using Business.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Business.Entities;
-using Business.Logic;
 
 namespace UI.Web
 {
@@ -14,13 +14,13 @@ namespace UI.Web
         private Usuario Entity { get; set; }
         private int SelectedID
         {
-            get 
-            { 
+            get
+            {
                 if (this.ViewState["SelectedID"] != null)
                 {
                     return (int)this.ViewState["SelectedID"];
                 }
-                else 
+                else
                 {
                     return 0;
                 }
@@ -32,7 +32,7 @@ namespace UI.Web
         }
         private bool isEntitySelected
         {
-            get 
+            get
             {
                 return this.SelectedID != 0;
             }
@@ -49,16 +49,17 @@ namespace UI.Web
                 }
                 return _logic;
             }
-         }
+        }
 
         public enum FormMode
         {
-            Alta,Baja,Modificacion
+            Alta, Baja, Modificacion
         }
 
-        public FormMode formMode { 
+        public FormMode formMode
+        {
             get { return (FormMode)this.ViewState["FormMode"]; }
-            set {this.ViewState["FormMode"]=value; }
+            set { this.ViewState["FormMode"] = value; }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -77,7 +78,7 @@ namespace UI.Web
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.SelectedID = (int)this.gridView.SelectedValue; 
+            this.SelectedID = (int)this.gridView.SelectedValue;
             this.formPanel.Visible = false;
         }
 
@@ -93,11 +94,11 @@ namespace UI.Web
             this.txtRepetirClave.Attributes["value"] = this.Entity.Clave;
         }
 
-        private void LoadEntity(Usuario usuario) 
+        private void LoadEntity(Usuario usuario)
         {
             usuario.Nombre = this.txtNombre.Text;
             usuario.Apellido = this.txtApellido.Text;
-            usuario.Email= this.txtEmail.Text;
+            usuario.Email = this.txtEmail.Text;
             usuario.NombreUsuario = this.txtNombreUsuario.Text;
             usuario.Habilitado = this.chkHabilitado.Checked;
             usuario.Clave = this.txtClave.Text;
@@ -145,11 +146,11 @@ namespace UI.Web
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-           
-                this.formPanel.Visible = true;
-                this.formMode = FormMode.Alta;
-                this.ClearForm();
-                this.EnableForm(true);
+
+            this.formPanel.Visible = true;
+            this.formMode = FormMode.Alta;
+            this.ClearForm();
+            this.EnableForm(true);
         }
 
         private void ClearForm()
@@ -163,7 +164,7 @@ namespace UI.Web
             this.txtRepetirClave.Attributes["value"] = string.Empty;
         }
 
-            protected void btnAceptar_Click(object sender, EventArgs e)
+        protected void btnAceptar_Click(object sender, EventArgs e)
         {
             if (Page.IsValid || this.formMode == FormMode.Baja)
             {
@@ -200,16 +201,16 @@ namespace UI.Web
 
         protected void ValidateEmail(object source, ServerValidateEventArgs args)
         {
-                bool validationsResult = Validaciones.IsValidEmail(args.Value);
+            bool validationsResult = Validaciones.IsValidEmail(args.Value);
 
-                args.IsValid=validationsResult;
+            args.IsValid = validationsResult;
         }
 
         protected void ValidatePassword(object source, ServerValidateEventArgs args)
         {
-                bool validationsResult = Validaciones.IsValidPassword(args.Value);
+            bool validationsResult = Validaciones.IsValidPassword(args.Value);
 
-                args.IsValid = validationsResult;
+            args.IsValid = validationsResult;
         }
     }
 }

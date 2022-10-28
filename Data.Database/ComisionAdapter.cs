@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Business.Entities;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace Data.Database
 {
@@ -71,7 +71,7 @@ namespace Data.Database
         public Business.Entities.Comision GetOne(int ID)
         {
             // return Comisiones.Find(delegate (Comision c) { return c.ID == ID; });
-            
+
             Comision comision = new Comision();
 
             try
@@ -90,7 +90,7 @@ namespace Data.Database
                     comision.AnioEspecialidad = (int)drComision["anio_especialidad"];
                     comision.Descripcion = (string)drComision["desc_comision"];
                 }
-                
+
                 drComision.Close();
             }
 

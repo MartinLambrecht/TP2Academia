@@ -47,7 +47,7 @@ namespace UI.Desktop
                 this.chkAlta.Checked = this.ModuloUsuarioActual.PermiteAlta;
                 this.chkBaja.Checked = this.ModuloUsuarioActual.PermiteBaja;
                 this.chkModificacion.Checked = this.ModuloUsuarioActual.PermiteModificacion;
-                this.chkConsulta.Checked = this.ModuloUsuarioActual.PermiteConsulta;                
+                this.chkConsulta.Checked = this.ModuloUsuarioActual.PermiteConsulta;
             }
 
             this.cmbIdModulo.DisplayMember = "Descripcion";
@@ -95,7 +95,7 @@ namespace UI.Desktop
 
         private new void MapearADatos()
         {
-            if(this.modo == ModoForm.Alta)
+            if (this.modo == ModoForm.Alta)
             {
                 this.ModuloUsuarioActual = new ModuloUsuario();
             }
@@ -120,7 +120,7 @@ namespace UI.Desktop
 
         private new bool Validar()
         {
-            bool isOK = true; 
+            bool isOK = true;
 
             if (!isOK)
             {
