@@ -39,7 +39,6 @@ namespace UI.Desktop
             this.especialidadesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.modulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modulosUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,8 +92,7 @@ namespace UI.Desktop
             this.usuariosToolStripMenuItem1,
             this.especialidadesToolStripMenuItem1,
             this.modulosToolStripMenuItem,
-            this.modulosUsuariosToolStripMenuItem,
-            this.materiasToolStripMenuItem});
+            this.modulosUsuariosToolStripMenuItem});
             this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
             this.aBMToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.aBMToolStripMenuItem.Text = "ABM";
@@ -127,13 +125,6 @@ namespace UI.Desktop
             this.modulosUsuariosToolStripMenuItem.Text = "ModulosUsuarios";
             this.modulosUsuariosToolStripMenuItem.Click += new System.EventHandler(this.modulosUsuariosToolStripMenuItem_Click);
             // 
-            // materiasToolStripMenuItem
-            // 
-            this.materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
-            this.materiasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.materiasToolStripMenuItem.Text = "Materias";
-            this.materiasToolStripMenuItem.Click += new System.EventHandler(this.materiasToolStripMenuItem_Click);
-            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +156,5 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem especialidadesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem modulosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modulosUsuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem materiasToolStripMenuItem;
     }
 }
