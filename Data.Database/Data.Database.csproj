@@ -55,7 +55,7 @@
     <Compile Include="ModuloUsuarioAdapter.cs" />
     <Compile Include="ModuloAdapter.cs" />
     <Compile Include="EspecialidadAdapter.cs" />
-    <Compile Include="InscripcionesAdapter.cs" />
+    <Compile Include="AlumnoInscripcionAdapter.cs" />
     <Compile Include="UsuarioAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
