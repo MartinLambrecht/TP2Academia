@@ -59,18 +59,6 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComisionDesktop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ComisionDesktop.Designer.cs">
-      <DependentUpon>ComisionDesktop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Comisiones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Comisiones.Designer.cs">
-      <DependentUpon>Comisiones.cs</DependentUpon>
-    </Compile>
     <Compile Include="InformeNotasPorMateria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,18 +76,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Cursos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cursos.Designer.cs">
-      <DependentUpon>Cursos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CursoDesktop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CursoDesktop.Designer.cs">
-      <DependentUpon>CursoDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="InformeUsuarios.cs">
       <SubType>Form</SubType>
@@ -169,12 +145,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ComisionDesktop.resx">
-      <DependentUpon>ComisionDesktop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Comisiones.resx">
-      <DependentUpon>Comisiones.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="InformeNotasPorMateria.resx">
       <DependentUpon>InformeNotasPorMateria.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,12 +155,6 @@
     <EmbeddedResource Include="ReporteUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteUsuarios.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cursos.resx">
-      <DependentUpon>Cursos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CursoDesktop.resx">
-      <DependentUpon>CursoDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformeUsuarios.resx">
       <DependentUpon>InformeUsuarios.cs</DependentUpon>
