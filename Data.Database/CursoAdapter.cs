@@ -12,44 +12,8 @@ namespace Data.Database
     public class CursoAdapter : Adapter
     {
 
-        private static List<Curso> _Cursos;
-
-        private static List<Curso> Cursos
-        {
-            get
-            {
-                if (_Cursos == null)
-                {
-                    _Cursos = new List<Business.Entities.Curso>();
-                    Business.Entities.Curso cur;
-                    cur = new Business.Entities.Curso();
-                    cur.ID = 1;
-                    cur.State = Business.Entities.BusinessEntity.States.Unmodified;
-                    cur.AnioCalendario = 2022;
-                    cur.Cupo = 20;
-                    cur.Descripcion = "Tecnologia de Desarrollos de Software .NET";
-                    cur.IDComision = 5;
-                    cur.IDMateria = 3;
-                    _Cursos.Add(cur);
-
-                    cur = new Business.Entities.Curso();
-                    cur.ID = 2;
-                    cur.State = Business.Entities.BusinessEntity.States.Unmodified;
-                    cur.AnioCalendario = 2022;
-                    cur.Cupo = 22;
-                    cur.Descripcion = "Paradigma";
-                    cur.IDComision = 4;
-                    cur.IDMateria = 2;
-                    _Cursos.Add(cur);
-
-                }
-                return _Cursos;
-            }
-        }
-
         public List<Curso> GetAll()
         {
-            // return new List<Curso>(Cursos);
             List<Curso> cursos = new List<Curso>();
             try
             {
@@ -63,30 +27,32 @@ namespace Data.Database
                 {
                     Curso cur = new Curso();
 
+                    cur.ID = (int)drCursos["id_curso"];
+                    cur.IDMateria = (int)drCursos["id_materia"];
+                    cur.IDComision = (int)drCursos["id_comision"];
                     cur.AnioCalendario = (int)drCursos["anio_calendario"];
                     cur.Cupo = (int)drCursos["cupo"];
-                    // cur.Descripcion = (string)drCursos["descripcion"];
 
                     cursos.Add(cur);
                 }
 
                 drCursos.Close();
-                this.CloseConnection();
-
-                return cursos;
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar lista de cursos", Ex);
-                throw ExcepcionManejada;
+                throw new Exception("Error al recuperar lista de cursos", Ex); ;
             }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return cursos;
         }
 
         public Business.Entities.Curso GetOne(int ID)
         {
-            // return Cursos.Find(delegate (Curso c) { return c.ID == ID; });
-            Curso curso = new Curso();
 
+            Curso cur = new Curso();
             try
             {
                 this.OpenConnection();
@@ -99,22 +65,25 @@ namespace Data.Database
 
                 if (drCurso.Read())
                 {
-                    curso.AnioCalendario = (int)drCurso["anio_calendario"];
-                    curso.Cupo = (int)drCurso["cupo"];
+
+                    cur.ID = (int)drCurso["id_curso"];
+                    cur.IDMateria = (int)drCurso["id_materia"];
+                    cur.IDComision = (int)drCurso["id_comision"];
+                    cur.AnioCalendario = (int)drCurso["anio_calendario"];
+                    cur.Cupo = (int)drCurso["cupo"];
                 }
                 drCurso.Close();
             }
 
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar datos del curso", Ex);
-                throw ExcepcionManejada;
+                throw new Exception("Error al recuperar datos del curso", Ex); ;
             }
             finally
             {
                 this.CloseConnection();
             }
-            return curso;
+            return cur;
         }
 
         public void Delete(int ID)
@@ -145,13 +114,16 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE cursos SET anio_calendario = @anio_calendario, cupo = @cupo" +
+                SqlCommand cmdInsert = new SqlCommand("UPDATE cursos SET id_materia=@id_materia, id_comision=@id_comision, anio_calendario = @anio_calendario, cupo = @cupo" +
                 "WHERE id_curso=@id", sqlConn);
 
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = curso.ID;
-                cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
-                cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
-                cmdSave.ExecuteNonQuery();
+                
+                cmdInsert.Parameters.Add("@id", SqlDbType.Int).Value = curso.ID;
+                cmdInsert.Parameters.Add("@id_comision", SqlDbType.Int).Value = curso.IDComision;
+                cmdInsert.Parameters.Add("@id_materia", SqlDbType.Int).Value = curso.IDMateria;
+                cmdInsert.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
+                cmdInsert.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
+                cmdInsert.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
@@ -169,9 +141,13 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("insert into cursos(anio_calendario,cupo)" +
-                 "values (@anio_calendario, @cupo)" +
+                SqlCommand cmdSave = new SqlCommand("insert into cursos(id_materia,id_comision,anio_calendario,cupo)" +
+                 "values ( @id_materia,@id_comision ,@anio_calendario, @cupo)" +
                   "select @@identity", sqlConn);
+
+
+                cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = curso.IDComision;
+                cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = curso.IDMateria;
                 cmdSave.Parameters.Add("anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("cupo", SqlDbType.Int).Value = curso.Cupo;
                 curso.ID = decimal.ToInt32((decimal)cmdSave.ExecuteScalar());

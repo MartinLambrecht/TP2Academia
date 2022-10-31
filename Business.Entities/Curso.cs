@@ -10,10 +10,6 @@
         public int Cupo
         { set { _Cupo = value; } get { return _Cupo; } }
 
-        private string _Descripcion;
-        public string Descripcion
-        { set { _Descripcion = value; } get { return _Descripcion; } }
-
         private int _IDComision;
         public int IDComision
         { set { _IDComision = value; } get { return _IDComision; } }

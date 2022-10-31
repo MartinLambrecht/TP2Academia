@@ -25,5 +25,10 @@
         private string _NombreUsuario;
         public string NombreUsuario
         { set { _NombreUsuario = value; } get { return _NombreUsuario; } }
+
+        private string _IDPersona;
+
+        public string IDPersona
+        { set { _IDPersona = value; } get { return _IDPersona; } }
     }
 }
