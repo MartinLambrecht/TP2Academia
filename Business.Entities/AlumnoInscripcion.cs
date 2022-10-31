@@ -14,8 +14,8 @@
         public int IDCurso
         { set { _IDCurso = value; } get { return _IDCurso; } }
 
-        private int _Nota;
-        public int Nota
+        private int? _Nota;
+        public int? Nota
         { set { _Nota = value; } get { return _Nota; } }
     }
 }

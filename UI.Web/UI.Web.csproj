@@ -81,6 +81,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Inscripciones.aspx" />
     <Content Include="Login\Login.aspx" />
     <Content Include="Login\Login.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -89,7 +90,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Usuarios\Usuarios.css" />
+    <Content Include="Style\Global.css" />
     <Content Include="Web.config" />
     <Content Include="Usuarios\Usuarios.aspx" />
     <Content Include="Default.aspx" />
@@ -97,6 +98,13 @@
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Inscripciones.aspx.cs">
+      <DependentUpon>Inscripciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inscripciones.aspx.designer.cs">
+      <DependentUpon>Inscripciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
