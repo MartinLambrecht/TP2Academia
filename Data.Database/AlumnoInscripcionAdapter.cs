@@ -28,8 +28,11 @@ namespace Data.Database
                     inscripcion.IDAlumno= (int)drAlumnoInscripcions["id_alumno"];
                     inscripcion.IDCurso = (int)drAlumnoInscripcions["id_curso"];
                     inscripcion.Condicion = (string)drAlumnoInscripcions["condicion"];
-                    inscripcion.Nota = (int)drAlumnoInscripcions["nota"];
-
+                    if (drAlumnoInscripcions["nota"] != DBNull.Value)
+                    {
+                        inscripcion.Nota = (int)drAlumnoInscripcions["nota"];
+                    }
+                    
                     inscripcions.Add(inscripcion);
                 }
 
@@ -64,7 +67,13 @@ namespace Data.Database
                     inscripcionPedido.IDAlumno = (int)drAlumnoInscripcion["id_alumno"];
                     inscripcionPedido.IDCurso = (int)drAlumnoInscripcion["id_curso"];
                     inscripcionPedido.Condicion = (string)drAlumnoInscripcion["condicion"];
-                    inscripcionPedido.Nota = (int)drAlumnoInscripcion["nota"];
+
+                    //inscripcionPedido.Nota = drAlumnoInscripcion["nota"] == DBNull.Value ? null : (int)drAlumnoInscripcion["nota"];
+                    if (drAlumnoInscripcion["nota"] != DBNull.Value)
+                    {
+                        inscripcionPedido.Nota = (int)drAlumnoInscripcion["nota"];
+                    }
+                
                 }
                 drAlumnoInscripcion.Close();
             }
@@ -114,7 +123,17 @@ namespace Data.Database
                 cmdUpdate.Parameters.Add("@id_alumno", SqlDbType.Int).Value = modifiedInscripcion.IDAlumno;
                 cmdUpdate.Parameters.Add("@id_curso", SqlDbType.Int).Value = modifiedInscripcion.IDCurso;
                 cmdUpdate.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = modifiedInscripcion.Condicion;
-                cmdUpdate.Parameters.Add("@nota", SqlDbType.Int).Value = modifiedInscripcion.Nota;
+                
+                //cmdUpdate.Parameters.Add("@nota", SqlDbType.Int).Value = modifiedInscripcion.Nota is null ? DBNull.Value : modifiedInscripcion.Nota;
+                if(modifiedInscripcion.Nota is null)
+                {
+                    cmdUpdate.Parameters.Add("@nota", SqlDbType.Int).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmdUpdate.Parameters.Add("@nota", SqlDbType.Int).Value = modifiedInscripcion.Nota;
+                }
+                
 
                 cmdUpdate.ExecuteNonQuery();
             }
@@ -134,14 +153,21 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdInsert = new SqlCommand("Insert into inscripcions(id_alumno, id_curso, condicion, nota)" +
-                    "values(@id_alumno, @id_curso, @condicion, @nota " + "select @@identity", sqlConn);
+                SqlCommand cmdInsert = new SqlCommand("Insert into alumnos_inscripciones(id_alumno, id_curso, condicion, nota)" +
+                    "values(@id_alumno, @id_curso, @condicion, @nota )" + "select @@identity", sqlConn);
 
                 cmdInsert.Parameters.Add("@id", SqlDbType.Int).Value = newInscripcion.ID;
                 cmdInsert.Parameters.Add("@id_alumno", SqlDbType.Int).Value = newInscripcion.IDAlumno;
                 cmdInsert.Parameters.Add("@id_curso", SqlDbType.Int).Value = newInscripcion.IDCurso;
                 cmdInsert.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = newInscripcion.Condicion;
-                cmdInsert.Parameters.Add("@nota", SqlDbType.Int).Value = newInscripcion.Nota;
+                if (newInscripcion.Nota is null)
+                {
+                    cmdInsert.Parameters.Add("@nota", SqlDbType.Int).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmdInsert.Parameters.Add("@nota", SqlDbType.Int).Value = newInscripcion.Nota;
+                }
 
                 newInscripcion.ID = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
             }

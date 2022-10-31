@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Usuarios" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Usuarios" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceholder" runat="server" >
-    <link type="text/css" rel="stylesheet" href="~/Usuarios/Usuarios.css" />
+    <link type="text/css" rel="stylesheet" href="~/Style/Global.css" />
     <br />
     <br />
     <br />
