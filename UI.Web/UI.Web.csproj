@@ -171,6 +171,7 @@
     </Compile>
     <Compile Include="Informes.aspx.designer.cs">
       <DependentUpon>Informes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inscripciones.aspx.cs">
       <DependentUpon>Inscripciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
