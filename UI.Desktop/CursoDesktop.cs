@@ -44,7 +44,6 @@ namespace UI.Desktop
             else
             {
                 this.txtID.Text = this.CursoActual.ID.ToString();
-                this.txtDescripcion.Text = this.CursoActual.Descripcion;
                 this.txtAnioCalendario.Text = this.CursoActual.AnioCalendario.ToString();
                 this.txtCupo.Text = this.CursoActual.Cupo.ToString();
                 this.txtIDComision.Text = this.CursoActual.IDComision.ToString();
@@ -87,7 +86,6 @@ namespace UI.Desktop
             }
             this.CursoActual.AnioCalendario = Convert.ToInt32(this.txtAnioCalendario.Text.Trim()); //se puede hacer de otra forma el convertir de string a int
             this.CursoActual.Cupo = int.Parse(this.txtCupo.Text.Trim());
-            this.CursoActual.Descripcion = this.txtDescripcion.Text.Trim();
             this.CursoActual.State = (BusinessEntity.States)(int)modo;
 
         }
@@ -102,11 +100,10 @@ namespace UI.Desktop
 
         private new bool Validar()
         {
-            bool descripcionVal = ValidarCampoVacio(txtDescripcion, errorDescripcion, "La descripcion no puede estar vacia.");
             bool cupoVal = ValidarCampoVacio(txtCupo, errorCupo, "El cupo no puede estar vacio.");
             bool anioCalendarioVal = ValidarCampoVacio(txtAnioCalendario, errorAnioCalendario1, "El año del calendario no puede estar vacio.");
 
-            bool isOK = (descripcionVal && cupoVal && anioCalendarioVal);
+            bool isOK = (cupoVal && anioCalendarioVal);
 
             if (!isOK)
             {
