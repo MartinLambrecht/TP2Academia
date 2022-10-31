@@ -62,5 +62,14 @@ namespace UI.Desktop
             new ModulosUsuarios().Show();
         }
 
+        private void listadoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new InformeUsuarios().Show();
+        }
+
+        private void listadoNotasPorMateriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new InformeNotasPorMateria().Show();
+        }
     }
 }
