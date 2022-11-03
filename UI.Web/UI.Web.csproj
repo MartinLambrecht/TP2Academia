@@ -163,6 +163,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSCupoPorMateria.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DSMateriasPorPlan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMateriasPorPlan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,6 +192,12 @@
     <Compile Include="Login\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReporteMateriasPorPlan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteMateriasPorPlan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ModulosUsuarios.aspx.cs">
       <DependentUpon>ModulosUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,12 +210,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteCupoPorMateria.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ReporteUsuarios.cs">
-      <DependentUpon>ReporteUsuarios.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Site.Master.cs">
@@ -258,6 +263,17 @@
     <Content Include="DSCupoPorMateria.xss">
       <DependentUpon>DSCupoPorMateria.xsd</DependentUpon>
     </Content>
+    <Content Include="DSMateriasPorPlan.xsc">
+      <DependentUpon>DSMateriasPorPlan.xsd</DependentUpon>
+    </Content>
+    <None Include="DSMateriasPorPlan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMateriasPorPlan.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DSMateriasPorPlan.xss">
+      <DependentUpon>DSMateriasPorPlan.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -291,13 +307,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ReporteMateriasPorPlan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteMateriasPorPlan.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteCupoPorMateria.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteCupoPorMateria.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReporteUsuarios.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReporteUsuarios.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

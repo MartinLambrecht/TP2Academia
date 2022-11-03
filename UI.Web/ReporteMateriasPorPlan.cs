@@ -16,14 +16,14 @@ namespace UI.Web {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ReporteUsuarios : ReportClass {
+    public class ReporteMateriasPorPlan : ReportClass {
         
-        public ReporteUsuarios() {
+        public ReporteMateriasPorPlan() {
         }
         
         public override string ResourceName {
             get {
-                return "ReporteUsuarios.rpt";
+                return "ReporteMateriasPorPlan.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace UI.Web {
         
         public override string FullResourceName {
             get {
-                return "UI.Web.ReporteUsuarios.rpt";
+                return "UI.Web.ReporteMateriasPorPlan.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace UI.Web {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -82,7 +82,7 @@ namespace UI.Web {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -106,9 +106,9 @@ namespace UI.Web {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReporteUsuarios : Component, ICachedReport {
+    public class CachedReporteMateriasPorPlan : Component, ICachedReport {
         
-        public CachedReporteUsuarios() {
+        public CachedReporteMateriasPorPlan() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace UI.Web {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ReporteUsuarios rpt = new ReporteUsuarios();
+            ReporteMateriasPorPlan rpt = new ReporteMateriasPorPlan();
             rpt.Site = this.Site;
             return rpt;
         }

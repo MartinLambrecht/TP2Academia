@@ -12,7 +12,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UI.Web.DSCupoPorMateriaTableAdapters;
+using UI.Web.DSMateriasPorPlanTableAdapters;
 using static UI.Web.DSCupoPorMateria;
+using static UI.Web.DSMateriasPorPlan;
 
 namespace UI.Web
 {
@@ -25,11 +27,19 @@ namespace UI.Web
 
         protected void btnUsuarios_Click1(object sender, EventArgs e)
         {
-            ReporteUsuarios rUsuarios = new ReporteUsuarios();
-            rUsuarios.SetDataSource(new UsuarioLogic().GetAll());
-            crv.ReportSource = rUsuarios;
+            
+            MateriasPorPlanTableAdapter da = new MateriasPorPlanTableAdapter();
+            DSMateriasPorPlan dsMateriasPorPlan = new DSMateriasPorPlan();
 
-            rUsuarios.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Informacion Usuarios.");
+            MateriasPorPlanDataTable dt = (MateriasPorPlanDataTable)dsMateriasPorPlan.Tables["MateriasPorPlan"];
+
+            da.Fill(dt);
+
+            ReporteMateriasPorPlan rMateriasPorPlan = new ReporteMateriasPorPlan();
+            rMateriasPorPlan.SetDataSource(dsMateriasPorPlan);
+            crv.ReportSource = rMateriasPorPlan;
+
+            rMateriasPorPlan.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Informacion Notas.");
         }
 
         protected void btnCupoPorMateria_Click(object sender, EventArgs e)
