@@ -51,6 +51,19 @@ namespace UI.Web
             }
         }
 
+        private PersonaLogic _personaLogic;
+        private PersonaLogic personaLogic
+        {
+            get
+            {
+                if (_personaLogic is null)
+                {
+                    _personaLogic = new PersonaLogic();
+                }
+                return _personaLogic;
+            }
+        }
+
         public enum FormMode
         {
             Alta, Baja, Modificacion
@@ -92,6 +105,7 @@ namespace UI.Web
             this.txtNombreUsuario.Text = this.Entity.NombreUsuario;
             this.txtClave.Attributes["value"] = this.Entity.Clave;
             this.txtRepetirClave.Attributes["value"] = this.Entity.Clave;
+            this.ddlPersona.SelectedValue = Convert.ToString(this.Entity.IDPersona);
         }
 
         private void LoadEntity(Usuario usuario)
@@ -102,6 +116,10 @@ namespace UI.Web
             usuario.NombreUsuario = this.txtNombreUsuario.Text;
             usuario.Habilitado = this.chkHabilitado.Checked;
             usuario.Clave = this.txtClave.Text;
+            if (this.ddlPersona.SelectedValue != "0")
+            {
+                usuario.IDPersona = Convert.ToInt32(this.ddlPersona.SelectedValue);
+            }
         }
         private void SaveEntity(Usuario usuario)
         {
@@ -121,6 +139,13 @@ namespace UI.Web
             this.txtNombreUsuario.Enabled = enabled;
             this.txtClave.Enabled = enabled;
             this.txtRepetirClave.Enabled = enabled;
+
+            this.ddlPersona.Enabled = enabled;
+            this.ddlPersona.DataSource = personaLogic.GetAll();
+            this.ddlPersona.DataTextField = "Legajo";
+            this.ddlPersona.DataValueField = "ID";
+            this.ddlPersona.DataBind();
+            this.ddlPersona.Items.Insert(0, new ListItem("None", "0"));
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)

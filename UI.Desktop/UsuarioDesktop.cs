@@ -10,6 +10,19 @@ namespace UI.Desktop
     {
         public Usuario UsuarioActual;
 
+        private PersonaLogic _personaLogic;
+        public PersonaLogic personaLogic
+        {
+            get
+            {
+                if (_personaLogic is null)
+                {
+                    _personaLogic = new PersonaLogic();
+                }
+                return _personaLogic;
+            }
+        }
+
         public UsuarioDesktop()
         {
             InitializeComponent();
@@ -45,6 +58,8 @@ namespace UI.Desktop
                 this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
                 this.txtClave.Text = this.UsuarioActual.Clave;
                 this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
+
+                
             }
             if (modo == ModoForm.Baja)
             {
@@ -53,6 +68,17 @@ namespace UI.Desktop
                 this.txtConfirmarClave.Hide();
                 this.lblConfirmarClave.Hide();
             }
+
+            //Añadir opcion nula
+            var sourceCombo = personaLogic.GetAll();
+            sourceCombo.Add(new Persona { ID = 0, Legajo = 0 });
+
+            this.cmbIdPersona.DataSource = sourceCombo;
+            this.cmbIdPersona.DisplayMember = "Legajo";
+            this.cmbIdPersona.ValueMember = "ID";
+
+            this.cmbIdPersona.SelectedValue = this.UsuarioActual is null ? 0: this.UsuarioActual.IDPersona;
+
 
             switch (modo)
             {
@@ -100,6 +126,11 @@ namespace UI.Desktop
             this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
             this.UsuarioActual.State = (BusinessEntity.States)(int)modo;
             this.UsuarioActual.Clave = this.txtClave.Text.Trim();
+            if ((int)this.cmbIdPersona.SelectedValue != 0)
+            {
+                this.UsuarioActual.IDPersona = Convert.ToInt32(this.cmbIdPersona.SelectedValue);
+            }
+
         }
 
         private new void GuardarCambios()

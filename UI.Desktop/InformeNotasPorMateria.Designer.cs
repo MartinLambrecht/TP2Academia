@@ -29,28 +29,28 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crvInformeNotasPorMateria = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.ReporteNotasPorMateria1 = new UI.Desktop.ReporteNotasPorMateria();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // crvInformeNotasPorMateria
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.ReporteNotasPorMateria1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.crvInformeNotasPorMateria.ActiveViewIndex = 0;
+            this.crvInformeNotasPorMateria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crvInformeNotasPorMateria.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crvInformeNotasPorMateria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crvInformeNotasPorMateria.Location = new System.Drawing.Point(0, 0);
+            this.crvInformeNotasPorMateria.Name = "crvInformeNotasPorMateria";
+            this.crvInformeNotasPorMateria.ReportSource = this.ReporteNotasPorMateria1;
+            this.crvInformeNotasPorMateria.Size = new System.Drawing.Size(800, 450);
+            this.crvInformeNotasPorMateria.TabIndex = 0;
             // 
             // InformeNotasPorMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.Controls.Add(this.crvInformeNotasPorMateria);
             this.Name = "InformeNotasPorMateria";
             this.Text = "InformeNotasPorMateria";
             this.ResumeLayout(false);
@@ -59,7 +59,7 @@ namespace UI.Desktop
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvInformeNotasPorMateria;
         private ReporteNotasPorMateria ReporteNotasPorMateria1;
     }
 }

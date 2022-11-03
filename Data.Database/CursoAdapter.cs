@@ -114,7 +114,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdInsert = new SqlCommand("UPDATE cursos SET id_materia=@id_materia, id_comision=@id_comision, anio_calendario = @anio_calendario, cupo = @cupo" +
+                SqlCommand cmdInsert = new SqlCommand("UPDATE cursos SET id_materia=@id_materia, id_comision=@id_comision, anio_calendario = @anio_calendario, cupo = @cupo " +
                 "WHERE id_curso=@id", sqlConn);
 
                 

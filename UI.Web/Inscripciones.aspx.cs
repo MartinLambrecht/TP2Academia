@@ -51,6 +51,32 @@ namespace UI.Web
             }
         }
 
+        private CursoLogic _cursoLogic;
+        private CursoLogic cursoLogic
+        {
+            get
+            {
+                if (_cursoLogic is null)
+                {
+                    _cursoLogic = new CursoLogic();
+                }
+                return _cursoLogic;
+            }
+        }
+
+        private PersonaLogic _personaLogic;
+        private PersonaLogic personaLogic
+        {
+            get
+            {
+                if (_personaLogic is null)
+                {
+                    _personaLogic = new PersonaLogic();
+                }
+                return _personaLogic;
+            }
+        }
+
         public enum FormMode
         {
             Alta, Baja, Modificacion
@@ -103,6 +129,7 @@ namespace UI.Web
         private void SaveEntity(AlumnoInscripcion inscripcion)
         {
             this.logic.Save(inscripcion);
+            
         }
         private void DeleteEntity(int id)
         {
@@ -112,14 +139,14 @@ namespace UI.Web
         private void EnableForm(bool enabled)
         {
             this.ddlAlumnos.Enabled = enabled;
-            this.ddlAlumnos.DataSource = new PersonaLogic().GetAll();
+            this.ddlAlumnos.DataSource = personaLogic.GetAll().Where(p=>p.TipoPersona == Persona.TipoPersonas.Estudiante).ToList();
             this.ddlAlumnos.DataTextField = "Legajo";
             this.ddlAlumnos.DataValueField = "ID";
             this.ddlAlumnos.DataBind();
 
             this.ddlCurso.Enabled = enabled;
-            this.ddlCurso.DataSource = new CursoLogic().GetAll();
-            this.ddlCurso.DataTextField = "AnioCalendario";
+            this.ddlCurso.DataSource = cursoLogic.GetAll().Where(c=>c.Cupo>0).ToList();
+            this.ddlCurso.DataTextField = "ID";
             this.ddlCurso.DataValueField = "ID";
             this.ddlCurso.DataBind();
 
@@ -134,6 +161,9 @@ namespace UI.Web
                 this.formPanel.Visible = true;
                 this.formMode = FormMode.Modificacion;
                 this.EnableForm(true);
+                //Al editar no se puede cambiar el alumno o el curso
+                this.ddlAlumnos.Enabled = false;
+                this.ddlCurso.Enabled = false;
                 this.LoadForm(this.SelectedID);
             }
         }
@@ -175,9 +205,11 @@ namespace UI.Web
                         this.Entity = new AlumnoInscripcion();
                         this.LoadEntity(Entity);
                         this.SaveEntity(Entity);
+                        this.ModificarCupo(Convert.ToInt32(this.ddlCurso.SelectedValue));
                         break;
                     case FormMode.Baja:
                         this.DeleteEntity(this.SelectedID);
+                        this.ModificarCupo(Convert.ToInt32(this.ddlCurso.SelectedValue));
                         break;
                     case FormMode.Modificacion:
                         this.Entity = new AlumnoInscripcion();
@@ -189,10 +221,27 @@ namespace UI.Web
                     default:
                         throw new NotImplementedException();
                 }
+                
                 this.LoadGrid();
 
                 this.formPanel.Visible = false;
             }
+        }
+
+        private void ModificarCupo(int idCurso)
+        {
+            Curso cursoActual = cursoLogic.GetOne(idCurso);
+            switch (this.formMode)
+            {
+                case FormMode.Alta:
+                    cursoActual.Cupo -= 1;
+                    break;
+                case FormMode.Baja:
+                    cursoActual.Cupo += 1;
+                    break;
+            }
+            cursoActual.State = BusinessEntity.States.Modified;
+            cursoLogic.Save(cursoActual);
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

@@ -22,5 +22,15 @@ namespace UI.Desktop.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SqlExpress;Initial Catalog=academia;User ID=net")]
+        public string academiaConnectionString {
+            get {
+                return ((string)(this["academiaConnectionString"]));
+            }
+        }
     }
 }

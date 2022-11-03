@@ -31,6 +31,10 @@ namespace Data.Database
                     usr.Nombre = (string)drUsuarios["nombre"];
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.Email = (string)drUsuarios["email"];
+                    if (drUsuarios["id_persona"] != DBNull.Value)
+                    {
+                        usr.IDPersona = (int)drUsuarios["id_persona"];
+                    }
 
                     usuarios.Add(usr);
                 }
@@ -69,6 +73,10 @@ namespace Data.Database
                     usuarioPedido.Nombre = (string)drUsuario["nombre"];
                     usuarioPedido.Apellido = (string)drUsuario["apellido"];
                     usuarioPedido.Email = (string)drUsuario["email"];
+                    if (drUsuario["id_persona"] != DBNull.Value)
+                    {
+                        usuarioPedido.IDPersona = (int)drUsuario["id_persona"];
+                    }
                 }
                 drUsuario.Close();
             }
@@ -111,7 +119,7 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdUpdate = new SqlCommand("Update usuarios set nombre_usuario=@nombre_usuario, clave=@clave," +
-                    "habilitado=@habilitado, nombre=@nombre, apellido=@apellido, email=@email " +
+                    "habilitado=@habilitado, nombre=@nombre, apellido=@apellido, email=@email, id_persona=@id_persona  " +
                     "Where id_usuario=@id", sqlConn);
 
                 cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = modifiedUsr.ID;
@@ -121,6 +129,15 @@ namespace Data.Database
                 cmdUpdate.Parameters.Add("@nombre", SqlDbType.VarChar).Value = modifiedUsr.Nombre;
                 cmdUpdate.Parameters.Add("@apellido", SqlDbType.VarChar).Value = modifiedUsr.Apellido;
                 cmdUpdate.Parameters.Add("@email", SqlDbType.VarChar).Value = modifiedUsr.Email;
+
+                if (modifiedUsr.IDPersona is 0)
+                {
+                    cmdUpdate.Parameters.Add("@id_persona", SqlDbType.Int).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmdUpdate.Parameters.Add("@id_persona", SqlDbType.Int).Value = modifiedUsr.IDPersona;
+                }
 
                 cmdUpdate.ExecuteNonQuery();
             }
@@ -140,8 +157,8 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdInsert = new SqlCommand("Insert into usuarios(nombre_usuario, clave, habilitado, nombre, apellido, email)" +
-                    "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email)" + "select @@identity", sqlConn);
+                SqlCommand cmdInsert = new SqlCommand("Insert into usuarios(nombre_usuario, clave, habilitado, nombre, apellido, email, id_persona)" +
+                    "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, @id_persona)" + "select @@identity", sqlConn);
 
                 cmdInsert.Parameters.Add("@nombre_usuario", SqlDbType.VarChar).Value = newUsr.NombreUsuario;
                 cmdInsert.Parameters.Add("@clave", SqlDbType.VarChar).Value = newUsr.Clave;
@@ -149,6 +166,16 @@ namespace Data.Database
                 cmdInsert.Parameters.Add("@nombre", SqlDbType.VarChar).Value = newUsr.Nombre;
                 cmdInsert.Parameters.Add("@apellido", SqlDbType.VarChar).Value = newUsr.Apellido;
                 cmdInsert.Parameters.Add("@email", SqlDbType.VarChar).Value = newUsr.Email;
+
+                if (newUsr.IDPersona is 0)
+                {
+                    cmdInsert.Parameters.Add("@id_persona", SqlDbType.Int).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmdInsert.Parameters.Add("@id_persona", SqlDbType.Int).Value = newUsr.IDPersona;
+                }
+
 
                 newUsr.ID = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
             }

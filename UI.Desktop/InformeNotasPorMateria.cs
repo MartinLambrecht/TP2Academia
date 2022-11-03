@@ -15,6 +15,7 @@ namespace UI.Desktop
         public InformeNotasPorMateria()
         {
             InitializeComponent();
+            this.crvInformeNotasPorMateria.RefreshReport();
         }
     }
 }

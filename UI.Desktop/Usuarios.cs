@@ -44,7 +44,7 @@ namespace UI.Desktop
             enabledColumn.DataPropertyName = "Habilitado";
 
             this.dgvUsuarios.Columns.Add(enabledColumn);
-
+            AddTextColumn("idPersona", "Id Persona", "IDPersona");
 
         }
 

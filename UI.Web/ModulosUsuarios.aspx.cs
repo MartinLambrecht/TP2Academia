@@ -51,6 +51,33 @@ namespace UI.Web
             }
         }
 
+        private UsuarioLogic _usuarioLogic;
+        private UsuarioLogic usuarioLogic
+        {
+            get
+            {
+                if (_usuarioLogic is null)
+                {
+                    _usuarioLogic = new UsuarioLogic();
+                }
+                return _usuarioLogic;
+            }
+        }
+
+        private ModulosLogic _moduloLogic;
+        private ModulosLogic moduloLogic
+        {
+            get
+            {
+                if (_moduloLogic is null)
+                {
+                    _moduloLogic = new ModulosLogic();
+                }
+                return _moduloLogic;
+            }
+        }
+
+
         public enum FormMode
         {
             Alta, Baja, Modificacion
@@ -115,13 +142,13 @@ namespace UI.Web
         private void EnableForm(bool enabled)
         {
             this.ddlUsuarios.Enabled = enabled;
-            this.ddlUsuarios.DataSource = new UsuarioLogic().GetAll();
+            this.ddlUsuarios.DataSource = usuarioLogic.GetAll();
             this.ddlUsuarios.DataTextField = "Apellido";
             this.ddlUsuarios.DataValueField = "ID";
             this.ddlUsuarios.DataBind();
 
             this.ddlModulo.Enabled = enabled;
-            this.ddlModulo.DataSource = new ModulosLogic().GetAll();
+            this.ddlModulo.DataSource = moduloLogic.GetAll();
             this.ddlModulo.DataTextField = "Descripcion";
             this.ddlModulo.DataValueField = "ID";
             this.ddlModulo.DataBind();

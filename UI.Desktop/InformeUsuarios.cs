@@ -15,11 +15,9 @@ namespace UI.Desktop
         public InformeUsuarios()
         {
             InitializeComponent();
+            this.crvInformeUsuarios.RefreshReport();
         }
 
-        private void NotasPorMateria1_InitReport(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

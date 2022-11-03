@@ -93,6 +93,11 @@
             <asp:CompareValidator ID="CompareValidatorPassword" ControlToValidate="txtRepetirClave" ControlToCompare="txtClave" runat="server" ErrorMessage="Las claves no coinciden."  CssClass="col-lg-2 "/>
         </div>
 
+        <div class="row justify-content-md-center ">
+            <asp:Label ID="lblPersona" runat="server" Text="Seleccione la persona: " CssClass="col-lg-2 text-end"/>
+            <asp:DropDownList ID="ddlPersona" runat="server" CssClass=" col-md-3"/>
+        </div>
+
         <asp:Panel ID="formActionPanel" runat="server" Height="50px" CssClass="container ">
             <div class="d-flex p-5 align-content-center justify-content-center">
                 <asp:LinkButton ID="btnAceptar" runat="server" OnClick="btnAceptar_Click"  CausesValidation="true" CssClass="btn btn-primary justify-content-center m-5">Aceptar</asp:LinkButton>

@@ -154,7 +154,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Style\Global.css" />
     <Content Include="Web.config" />
-    <Content Include="Usuarios\Usuarios.aspx" />
+    <Content Include="Usuarios.aspx" />
     <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -214,11 +214,11 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Usuarios.aspx.cs">
+    <Compile Include="Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Usuarios\Usuarios.aspx.designer.cs">
+    <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
