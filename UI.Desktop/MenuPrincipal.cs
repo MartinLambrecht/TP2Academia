@@ -65,7 +65,7 @@ namespace UI.Desktop
 
         private void modulosUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ModulosUsuarios(usuarioLogueado).Show();
+            new ModulosUsuarios(usuarioLogueado).Show();          
         }
 
         private void listadoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)

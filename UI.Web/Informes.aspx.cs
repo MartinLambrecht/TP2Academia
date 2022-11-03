@@ -1,6 +1,4 @@
 ﻿using Business.Logic;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Web;
 using Data.Database;
 using System;
 using System.Collections.Generic;
