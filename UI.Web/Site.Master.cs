@@ -15,6 +15,14 @@ namespace UI.Web
             {
                 Response.Redirect("~/Login/Login.aspx");
             }
+            else
+            {
+                Autorization();
+            }
+        }
+
+        private void Autorization()
+        {
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -22,5 +30,7 @@ namespace UI.Web
             this.Session.Remove("IDUsuarioLogueado");
             Response.Redirect("~/Login/Login.aspx");
         }
+
+        
     }
 }

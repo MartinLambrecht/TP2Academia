@@ -94,6 +94,20 @@ namespace UI.Web
             {
                 this.LoadGrid();
             }
+            Autorization();
+        }
+
+        private void Autorization()
+        {
+            int idModulo = 1;
+
+            if(!Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta))
+            {
+                Response.Redirect("~/Login/Login.aspx");
+            }
+            this.btnNuevo.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Alta);
+            this.btnEliminar.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Baja);
+            this.btnEditar.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Modificacion);
         }
 
         private void LoadGrid()

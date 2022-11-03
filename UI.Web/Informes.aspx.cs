@@ -22,7 +22,15 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Autorization();
+        }
+
+        private void Autorization()
+        {
+            int idModulo = 9;
+
+            this.btnUsuarios.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta);
+            this.btnCupoPorMateria.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta);
         }
 
         protected void btnUsuarios_Click1(object sender, EventArgs e)
