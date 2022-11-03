@@ -80,11 +80,18 @@ namespace UI.Desktop
 
         private void Autorizacion()
         {
-            this.modulosToolStripMenuItem.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, 2, Validaciones.Permisos.Consulta);
-            this.usuariosToolStripMenuItem1.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, 4, Validaciones.Permisos.Consulta);
-            this.modulosUsuariosToolStripMenuItem.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, 5, Validaciones.Permisos.Consulta);
-            this.especialidadesToolStripMenuItem1.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, 6, Validaciones.Permisos.Consulta);
-            this.informesToolStripMenuItem.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, 9, Validaciones.Permisos.Consulta);
+            var idModuloModulos = new ModulosLogic().GetAll().Single(m => m.Descripcion == "modulos").ID;
+            var idModuloUsuarios = new ModulosLogic().GetAll().Single(m => m.Descripcion == "usuarios").ID;
+            var idModuloModulosUsuarios = new ModulosLogic().GetAll().Single(m => m.Descripcion == "modulos_usuarios").ID;
+            var idModuloEspecialidades = new ModulosLogic().GetAll().Single(m => m.Descripcion == "especialidades").ID;
+            var idModuloInformes = new ModulosLogic().GetAll().Single(m => m.Descripcion == "informes").ID;
+
+
+            this.modulosToolStripMenuItem.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, idModuloModulos, Validaciones.Permisos.Consulta);
+            this.usuariosToolStripMenuItem1.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, idModuloUsuarios, Validaciones.Permisos.Consulta);
+            this.modulosUsuariosToolStripMenuItem.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, idModuloModulosUsuarios, Validaciones.Permisos.Consulta);
+            this.especialidadesToolStripMenuItem1.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, idModuloEspecialidades, Validaciones.Permisos.Consulta);
+            this.informesToolStripMenuItem.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, idModuloInformes, Validaciones.Permisos.Consulta);
         }
 
     }

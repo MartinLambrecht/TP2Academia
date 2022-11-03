@@ -99,9 +99,9 @@ namespace UI.Web
 
         private void Autorization()
         {
-            int idModulo = 1;
+            int idModulo = new ModulosLogic().GetAll().Single(m => m.Descripcion == "alumnos_inscripciones").ID;
 
-            if(!Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta))
+            if (!Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta))
             {
                 Response.Redirect("~/Default.aspx");
             }

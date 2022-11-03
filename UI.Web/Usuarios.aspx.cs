@@ -87,7 +87,8 @@ namespace UI.Web
 
         private void Autorization()
         {
-            int idModulo = 4;
+
+            int idModulo = new ModulosLogic().GetAll().Single(m=>m.Descripcion=="usuarios").ID;
 
             if (!Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta))
             {

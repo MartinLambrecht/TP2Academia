@@ -27,7 +27,7 @@ namespace UI.Web
 
         private void Autorization()
         {
-            int idModulo = 9;
+            int idModulo = new ModulosLogic().GetAll().Single(m => m.Descripcion == "informes").ID;
 
             if (!Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta))
             {
