@@ -29,6 +29,10 @@ namespace UI.Web
         {
             int idModulo = 9;
 
+            if (!Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta))
+            {
+                Response.Redirect("~/Default.aspx");
+            }
             this.btnUsuarios.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta);
             this.btnCupoPorMateria.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta);
         }

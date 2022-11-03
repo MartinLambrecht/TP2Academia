@@ -104,7 +104,7 @@ namespace UI.Web
 
             if(!Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta))
             {
-                Response.Redirect("~/Login/Login.aspx");
+                Response.Redirect("~/Default.aspx");
             }
             this.btnNuevo.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Alta);
             this.btnEliminar.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Baja);
