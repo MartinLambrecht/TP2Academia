@@ -31,11 +31,11 @@ namespace UI.Web
             {
                 Response.Redirect("~/Default.aspx");
             }
-            this.btnUsuarios.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta);
+            this.btnMateriasPorPlanes.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta);
             this.btnCupoPorMateria.Enabled = Validaciones.HasAuthorization((int)Session["IDUsuarioLogueado"], idModulo, Validaciones.Permisos.Consulta);
         }
 
-        protected void btnUsuarios_Click1(object sender, EventArgs e)
+        protected void btnMateriasPorPlanes_Click(object sender, EventArgs e)
         {
             
             MateriasPorPlanTableAdapter da = new MateriasPorPlanTableAdapter();

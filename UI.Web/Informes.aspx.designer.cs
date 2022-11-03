@@ -15,13 +15,13 @@ namespace UI.Web
     {
 
         /// <summary>
-        /// btnUsuarios control.
+        /// btnMateriasPorPlanes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUsuarios;
+        protected global::System.Web.UI.WebControls.Button btnMateriasPorPlanes;
 
         /// <summary>
         /// btnCupoPorMateria control.
