@@ -49,14 +49,14 @@ namespace UI.Desktop
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
+            this.lblIdPersona = new System.Windows.Forms.Label();
+            this.cmbIdPersona = new System.Windows.Forms.ComboBox();
             this.erpNombre = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpApellido = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpEmail = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpUsuario = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpClave = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpConfirmarClave = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblIdPersona = new System.Windows.Forms.Label();
-            this.cmbIdPersona = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erpNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpApellido)).BeginInit();
@@ -95,12 +95,12 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.lblIdPersona, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.cmbIdPersona, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.erpEmail.SetIconPadding(this.tableLayoutPanel1, 3);
+            this.erpUsuario.SetIconPadding(this.tableLayoutPanel1, 3);
             this.erpNombre.SetIconPadding(this.tableLayoutPanel1, 3);
             this.erpApellido.SetIconPadding(this.tableLayoutPanel1, 3);
             this.erpConfirmarClave.SetIconPadding(this.tableLayoutPanel1, 3);
             this.erpClave.SetIconPadding(this.tableLayoutPanel1, 3);
-            this.erpEmail.SetIconPadding(this.tableLayoutPanel1, 3);
-            this.erpUsuario.SetIconPadding(this.tableLayoutPanel1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -145,12 +145,12 @@ namespace UI.Desktop
             // txtID
             // 
             this.txtID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.erpNombre.SetIconPadding(this.txtID, 3);
-            this.erpApellido.SetIconPadding(this.txtID, 3);
-            this.erpConfirmarClave.SetIconPadding(this.txtID, 3);
-            this.erpClave.SetIconPadding(this.txtID, 3);
-            this.erpEmail.SetIconPadding(this.txtID, 3);
             this.erpUsuario.SetIconPadding(this.txtID, 3);
+            this.erpConfirmarClave.SetIconPadding(this.txtID, 3);
+            this.erpApellido.SetIconPadding(this.txtID, 3);
+            this.erpNombre.SetIconPadding(this.txtID, 3);
+            this.erpEmail.SetIconPadding(this.txtID, 3);
+            this.erpClave.SetIconPadding(this.txtID, 3);
             this.txtID.Location = new System.Drawing.Point(64, 3);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
@@ -161,12 +161,12 @@ namespace UI.Desktop
             // txtNombre
             // 
             this.txtNombre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.erpNombre.SetIconPadding(this.txtNombre, 3);
-            this.erpApellido.SetIconPadding(this.txtNombre, 3);
-            this.erpConfirmarClave.SetIconPadding(this.txtNombre, 3);
-            this.erpClave.SetIconPadding(this.txtNombre, 3);
-            this.erpEmail.SetIconPadding(this.txtNombre, 3);
             this.erpUsuario.SetIconPadding(this.txtNombre, 3);
+            this.erpConfirmarClave.SetIconPadding(this.txtNombre, 3);
+            this.erpApellido.SetIconPadding(this.txtNombre, 3);
+            this.erpNombre.SetIconPadding(this.txtNombre, 3);
+            this.erpEmail.SetIconPadding(this.txtNombre, 3);
+            this.erpClave.SetIconPadding(this.txtNombre, 3);
             this.txtNombre.Location = new System.Drawing.Point(64, 29);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 20);
@@ -175,12 +175,12 @@ namespace UI.Desktop
             // txtEmail
             // 
             this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.erpNombre.SetIconPadding(this.txtEmail, 3);
-            this.erpApellido.SetIconPadding(this.txtEmail, 3);
-            this.erpConfirmarClave.SetIconPadding(this.txtEmail, 3);
-            this.erpClave.SetIconPadding(this.txtEmail, 3);
-            this.erpEmail.SetIconPadding(this.txtEmail, 3);
             this.erpUsuario.SetIconPadding(this.txtEmail, 3);
+            this.erpConfirmarClave.SetIconPadding(this.txtEmail, 3);
+            this.erpApellido.SetIconPadding(this.txtEmail, 3);
+            this.erpNombre.SetIconPadding(this.txtEmail, 3);
+            this.erpEmail.SetIconPadding(this.txtEmail, 3);
+            this.erpClave.SetIconPadding(this.txtEmail, 3);
             this.txtEmail.Location = new System.Drawing.Point(64, 55);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(121, 20);
@@ -189,26 +189,27 @@ namespace UI.Desktop
             // txtClave
             // 
             this.txtClave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.erpNombre.SetIconPadding(this.txtClave, 3);
-            this.erpApellido.SetIconPadding(this.txtClave, 3);
-            this.erpConfirmarClave.SetIconPadding(this.txtClave, 3);
-            this.erpClave.SetIconPadding(this.txtClave, 3);
-            this.erpEmail.SetIconPadding(this.txtClave, 3);
             this.erpUsuario.SetIconPadding(this.txtClave, 3);
+            this.erpConfirmarClave.SetIconPadding(this.txtClave, 3);
+            this.erpApellido.SetIconPadding(this.txtClave, 3);
+            this.erpNombre.SetIconPadding(this.txtClave, 3);
+            this.erpEmail.SetIconPadding(this.txtClave, 3);
+            this.erpClave.SetIconPadding(this.txtClave, 3);
             this.txtClave.Location = new System.Drawing.Point(64, 81);
             this.txtClave.Name = "txtClave";
+            this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(121, 20);
             this.txtClave.TabIndex = 6;
             // 
             // txtApellido
             // 
             this.txtApellido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.erpNombre.SetIconPadding(this.txtApellido, 3);
-            this.erpApellido.SetIconPadding(this.txtApellido, 3);
-            this.erpConfirmarClave.SetIconPadding(this.txtApellido, 3);
-            this.erpClave.SetIconPadding(this.txtApellido, 3);
-            this.erpEmail.SetIconPadding(this.txtApellido, 3);
             this.erpUsuario.SetIconPadding(this.txtApellido, 3);
+            this.erpConfirmarClave.SetIconPadding(this.txtApellido, 3);
+            this.erpApellido.SetIconPadding(this.txtApellido, 3);
+            this.erpNombre.SetIconPadding(this.txtApellido, 3);
+            this.erpEmail.SetIconPadding(this.txtApellido, 3);
+            this.erpClave.SetIconPadding(this.txtApellido, 3);
             this.txtApellido.Location = new System.Drawing.Point(301, 29);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(106, 20);
@@ -217,12 +218,12 @@ namespace UI.Desktop
             // txtUsuario
             // 
             this.txtUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.erpNombre.SetIconPadding(this.txtUsuario, 3);
-            this.erpApellido.SetIconPadding(this.txtUsuario, 3);
-            this.erpConfirmarClave.SetIconPadding(this.txtUsuario, 3);
-            this.erpClave.SetIconPadding(this.txtUsuario, 3);
-            this.erpEmail.SetIconPadding(this.txtUsuario, 3);
             this.erpUsuario.SetIconPadding(this.txtUsuario, 3);
+            this.erpConfirmarClave.SetIconPadding(this.txtUsuario, 3);
+            this.erpApellido.SetIconPadding(this.txtUsuario, 3);
+            this.erpNombre.SetIconPadding(this.txtUsuario, 3);
+            this.erpEmail.SetIconPadding(this.txtUsuario, 3);
+            this.erpClave.SetIconPadding(this.txtUsuario, 3);
             this.txtUsuario.Location = new System.Drawing.Point(301, 55);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(106, 20);
@@ -231,14 +232,15 @@ namespace UI.Desktop
             // txtConfirmarClave
             // 
             this.txtConfirmarClave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.erpNombre.SetIconPadding(this.txtConfirmarClave, 3);
-            this.erpApellido.SetIconPadding(this.txtConfirmarClave, 3);
-            this.erpConfirmarClave.SetIconPadding(this.txtConfirmarClave, 3);
-            this.erpClave.SetIconPadding(this.txtConfirmarClave, 3);
-            this.erpEmail.SetIconPadding(this.txtConfirmarClave, 3);
             this.erpUsuario.SetIconPadding(this.txtConfirmarClave, 3);
+            this.erpConfirmarClave.SetIconPadding(this.txtConfirmarClave, 3);
+            this.erpApellido.SetIconPadding(this.txtConfirmarClave, 3);
+            this.erpNombre.SetIconPadding(this.txtConfirmarClave, 3);
+            this.erpEmail.SetIconPadding(this.txtConfirmarClave, 3);
+            this.erpClave.SetIconPadding(this.txtConfirmarClave, 3);
             this.txtConfirmarClave.Location = new System.Drawing.Point(301, 81);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
+            this.txtConfirmarClave.PasswordChar = '*';
             this.txtConfirmarClave.Size = new System.Drawing.Size(106, 20);
             this.txtConfirmarClave.TabIndex = 7;
             // 
@@ -317,6 +319,23 @@ namespace UI.Desktop
             this.lblId.TabIndex = 0;
             this.lblId.Text = "ID";
             // 
+            // lblIdPersona
+            // 
+            this.lblIdPersona.AutoSize = true;
+            this.lblIdPersona.Location = new System.Drawing.Point(3, 104);
+            this.lblIdPersona.Name = "lblIdPersona";
+            this.lblIdPersona.Size = new System.Drawing.Size(55, 13);
+            this.lblIdPersona.TabIndex = 11;
+            this.lblIdPersona.Text = "IdPersona";
+            // 
+            // cmbIdPersona
+            // 
+            this.cmbIdPersona.FormattingEnabled = true;
+            this.cmbIdPersona.Location = new System.Drawing.Point(64, 107);
+            this.cmbIdPersona.Name = "cmbIdPersona";
+            this.cmbIdPersona.Size = new System.Drawing.Size(121, 21);
+            this.cmbIdPersona.TabIndex = 12;
+            // 
             // erpNombre
             // 
             this.erpNombre.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -352,23 +371,6 @@ namespace UI.Desktop
             this.erpConfirmarClave.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.erpConfirmarClave.ContainerControl = this;
             this.erpConfirmarClave.Icon = ((System.Drawing.Icon)(resources.GetObject("erpConfirmarClave.Icon")));
-            // 
-            // lblIdPersona
-            // 
-            this.lblIdPersona.AutoSize = true;
-            this.lblIdPersona.Location = new System.Drawing.Point(3, 104);
-            this.lblIdPersona.Name = "lblIdPersona";
-            this.lblIdPersona.Size = new System.Drawing.Size(55, 13);
-            this.lblIdPersona.TabIndex = 11;
-            this.lblIdPersona.Text = "IdPersona";
-            // 
-            // cmbIdPersona
-            // 
-            this.cmbIdPersona.FormattingEnabled = true;
-            this.cmbIdPersona.Location = new System.Drawing.Point(64, 107);
-            this.cmbIdPersona.Name = "cmbIdPersona";
-            this.cmbIdPersona.Size = new System.Drawing.Size(121, 21);
-            this.cmbIdPersona.TabIndex = 12;
             // 
             // UsuarioDesktop
             // 

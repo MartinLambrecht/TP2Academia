@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Logic;
+using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace UI.Desktop
@@ -25,6 +27,7 @@ namespace UI.Desktop
             {
                 this.Dispose();
             }
+            Autorizacion();
         }
 
         private void modificarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,22 +47,22 @@ namespace UI.Desktop
 
         private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new Usuarios().Show();
+            new Usuarios(usuarioLogueado).Show();
         }
 
         private void especialidadesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new Especialidades().Show();
+            new Especialidades(usuarioLogueado).Show();
         }
 
         private void modulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Modulos().Show();
+            new Modulos(usuarioLogueado).Show();
         }
 
         private void modulosUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ModulosUsuarios().Show();
+            new ModulosUsuarios(usuarioLogueado).Show();
         }
 
         private void listadoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,5 +74,15 @@ namespace UI.Desktop
         {
             new InformeNotasPorMateria().Show();
         }
+
+        private void Autorizacion()
+        {
+            this.modulosToolStripMenuItem.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, 2, Validaciones.Permisos.Consulta);
+            this.usuariosToolStripMenuItem1.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, 4, Validaciones.Permisos.Consulta);
+            this.modulosUsuariosToolStripMenuItem.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, 5, Validaciones.Permisos.Consulta);
+            this.especialidadesToolStripMenuItem1.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, 6, Validaciones.Permisos.Consulta);
+            this.informesToolStripMenuItem.Enabled = Validaciones.HasAuthorization(usuarioLogueado.ID, 9, Validaciones.Permisos.Consulta);
+        }
+
     }
 }

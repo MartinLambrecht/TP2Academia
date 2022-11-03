@@ -1,20 +1,14 @@
 ﻿using Business.Entities;
 using Business.Logic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace UI.Desktop
 {
     public partial class Usuarios : Form
     {
+        public Usuario usuarioActual { get; set; }
+
         public Usuarios()
         {
             InitializeComponent();
@@ -26,7 +20,6 @@ namespace UI.Desktop
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgvUsuarios.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
 
             AddTextColumn("id", "ID", "ID");
 
@@ -45,7 +38,20 @@ namespace UI.Desktop
 
             this.dgvUsuarios.Columns.Add(enabledColumn);
             AddTextColumn("idPersona", "Id Persona", "IDPersona");
+        }
 
+        public Usuarios(Usuario usuario) : this()
+        {
+            this.usuarioActual = usuario;
+
+            Autorizacion();
+        }
+
+        private void Autorizacion()
+        {
+            this.tsbNuevo.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 4, Validaciones.Permisos.Alta);
+            this.tsbEliminar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 4, Validaciones.Permisos.Baja);
+            this.tsbEditar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 4, Validaciones.Permisos.Modificacion);
         }
 
         public void Listar()

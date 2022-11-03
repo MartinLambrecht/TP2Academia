@@ -15,6 +15,9 @@ namespace UI.Desktop
 {
     public partial class Especialidades : Form
     {
+
+        public Usuario usuarioActual { get; set; }
+
         public Especialidades()
         {
             InitializeComponent();
@@ -31,6 +34,21 @@ namespace UI.Desktop
             AddTextColumn("id", "ID", "ID");
             AddTextColumn("descripcion", "Descripcion", "Descripcion");
 
+        }
+
+        public Especialidades(Usuario usuario):this()
+        {
+            this.usuarioActual = usuario;
+
+            Autorizacion();
+        }
+
+        private void Autorizacion()
+        {
+
+            this.tsbNuevo.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 6, Validaciones.Permisos.Alta);
+            this.tsbEliminar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 6, Validaciones.Permisos.Baja);
+            this.tsbEditar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 6, Validaciones.Permisos.Modificacion);
         }
 
         public void Listar()

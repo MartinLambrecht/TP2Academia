@@ -34,21 +34,6 @@ namespace UI.Desktop
 
         private new void MapearDeDatos()
         {
-            if (modo == ModoForm.Alta)
-            {
-                this.txtID.Text = "";//Cuando hace el save lo genera automaticamente autoincremental
-            }
-            else
-            {
-                this.txtID.Text = this.ModuloUsuarioActual.ID.ToString();
-                this.cmbIdModulo.SelectedItem = this.ModuloUsuarioActual.IDModulo;
-                this.cmbIdUsuario.SelectedItem = this.ModuloUsuarioActual.IDUsuario;
-
-                this.chkAlta.Checked = this.ModuloUsuarioActual.PermiteAlta;
-                this.chkBaja.Checked = this.ModuloUsuarioActual.PermiteBaja;
-                this.chkModificacion.Checked = this.ModuloUsuarioActual.PermiteModificacion;
-                this.chkConsulta.Checked = this.ModuloUsuarioActual.PermiteConsulta;
-            }
 
             this.cmbIdModulo.DisplayMember = "Descripcion";
             this.cmbIdModulo.ValueMember = "ID";
@@ -57,6 +42,25 @@ namespace UI.Desktop
             this.cmbIdUsuario.DisplayMember = "NombreUsuario";
             this.cmbIdUsuario.ValueMember = "ID";
             this.cmbIdUsuario.DataSource = new UsuarioLogic().GetAll();
+            
+            if (modo == ModoForm.Alta)
+            {
+                this.txtID.Text = "";//Cuando hace el save lo genera automaticamente autoincremental
+            }
+            else
+            {
+                this.txtID.Text = this.ModuloUsuarioActual.ID.ToString();
+                this.cmbIdModulo.SelectedValue = this.ModuloUsuarioActual.IDModulo;
+                this.cmbIdUsuario.SelectedValue = this.ModuloUsuarioActual.IDUsuario;
+                this.cmbIdModulo.Enabled = false;
+                this.cmbIdUsuario.Enabled = false;
+
+                this.chkAlta.Checked = this.ModuloUsuarioActual.PermiteAlta;
+                this.chkBaja.Checked = this.ModuloUsuarioActual.PermiteBaja;
+                this.chkModificacion.Checked = this.ModuloUsuarioActual.PermiteModificacion;
+                this.chkConsulta.Checked = this.ModuloUsuarioActual.PermiteConsulta;
+            }
+
 
 
             switch (modo)

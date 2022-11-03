@@ -117,38 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="erpNombre.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="erpUsuario.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>346, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="erpNombre.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAANRHzKzUT9I41E/XTNRL08zUS9PM1E/XTNBP0jTYS8ioAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAqAP8GNRP0kzQT9Pw1E/X/NRP1/zUT9f81E/X/NRP1/zUT9f80E/T8NBP0kTMA
-        /wUAAAAAAAAAAAAAAAAqAP8GNBL1vDUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zUT
-        9f81E/W7MwD/BQAAAAAAAAAANRL0lDUT9f81E/X/NRP1/zUT9f81E/X/eGPw/3hj8P81E/X/NRP1/zUT
-        9f81E/X/NRP1/zQT9JEAAAAANBHzLDQT9Pw1E/X/NRP1/zUT9f81E/X/NRP1/7qy6v+6sur/NRP1/zUT
-        9f81E/X/NRP1/zUT9f80E/T8NhLyKjUT9JA1E/X/NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zUT
-        9f81E/X/NRP1/zUT9f81E/X/NRP1/zQT9I00E/XVNRP1/zUT9f81E/X/NRP1/zUT9f81E/X/eGPw/3hj
-        8P81E/X/NRP1/zUT9f81E/X/NRP1/zUT9f81E/XTNBL18jUT9f81E/X/NRP1/zUT9f81E/X/NRP1/7qy
-        6v+6sur/NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NBP18TUS9PM1E/X/NRP1/zUT9f81E/X/NRP1/zUT
-        9f+6sur/urLq/zUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zQS9fI0E/XVNRP1/zUT9f81E/X/NRP1/zUT
-        9f81E/X/urLq/7qy6v81E/X/NRP1/zUT9f81E/X/NRP1/zUT9f81E/XTNBP0kTUT9f81E/X/NRP1/zUT
-        9f81E/X/NRP1/7qy6v+6sur/NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NRP0jjMR8y01E/T9NRP1/zUT
-        9f81E/X/NRP1/zUT9f+6sur/urLq/zUT9f81E/X/NRP1/zUT9f81E/X/NBP0/DUR8ysAAAAANBL0lzUT
-        9f81E/X/NRP1/zUT9f81E/X/urLq/7qy6v81E/X/NRP1/zUT9f81E/X/NRP1/zUT9JMAAAAAAAAAACQk
-        /wc0EvW+NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zQS9b0qAP8GAAAAAAAA
-        AAAAAAAAJCT/BzQS9JY1E/T9NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NBP0/DUS9JQqAP8GAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAMxHzLTQT9JE0E/XUNRL09DUS9PQ0E/XUNRP0kDQR8ywAAAAAAAAAAAAA
-        AAAAAAAA8A8AAMADAACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIAB
-        AADAAwAA8A8AAA==
-</value>
-  </data>
-  <metadata name="erpApellido.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
-  <data name="erpApellido.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="erpUsuario.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAANRHzKzUT9I41E/XTNRL08zUS9PM1E/XTNBP0jTYS8ioAAAAAAAAAAAAA
@@ -199,10 +172,37 @@
         AADAAwAA8A8AAA==
 </value>
   </data>
-  <metadata name="erpClave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>457, 17</value>
+  <metadata name="erpApellido.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
   </metadata>
-  <data name="erpClave.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="erpApellido.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAANRHzKzUT9I41E/XTNRL08zUS9PM1E/XTNBP0jTYS8ioAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAqAP8GNRP0kzQT9Pw1E/X/NRP1/zUT9f81E/X/NRP1/zUT9f80E/T8NBP0kTMA
+        /wUAAAAAAAAAAAAAAAAqAP8GNBL1vDUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zUT
+        9f81E/W7MwD/BQAAAAAAAAAANRL0lDUT9f81E/X/NRP1/zUT9f81E/X/eGPw/3hj8P81E/X/NRP1/zUT
+        9f81E/X/NRP1/zQT9JEAAAAANBHzLDQT9Pw1E/X/NRP1/zUT9f81E/X/NRP1/7qy6v+6sur/NRP1/zUT
+        9f81E/X/NRP1/zUT9f80E/T8NhLyKjUT9JA1E/X/NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zUT
+        9f81E/X/NRP1/zUT9f81E/X/NRP1/zQT9I00E/XVNRP1/zUT9f81E/X/NRP1/zUT9f81E/X/eGPw/3hj
+        8P81E/X/NRP1/zUT9f81E/X/NRP1/zUT9f81E/XTNBL18jUT9f81E/X/NRP1/zUT9f81E/X/NRP1/7qy
+        6v+6sur/NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NBP18TUS9PM1E/X/NRP1/zUT9f81E/X/NRP1/zUT
+        9f+6sur/urLq/zUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zQS9fI0E/XVNRP1/zUT9f81E/X/NRP1/zUT
+        9f81E/X/urLq/7qy6v81E/X/NRP1/zUT9f81E/X/NRP1/zUT9f81E/XTNBP0kTUT9f81E/X/NRP1/zUT
+        9f81E/X/NRP1/7qy6v+6sur/NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NRP0jjMR8y01E/T9NRP1/zUT
+        9f81E/X/NRP1/zUT9f+6sur/urLq/zUT9f81E/X/NRP1/zUT9f81E/X/NBP0/DUR8ysAAAAANBL0lzUT
+        9f81E/X/NRP1/zUT9f81E/X/urLq/7qy6v81E/X/NRP1/zUT9f81E/X/NRP1/zUT9JMAAAAAAAAAACQk
+        /wc0EvW+NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NRP1/zQS9b0qAP8GAAAAAAAA
+        AAAAAAAAJCT/BzQS9JY1E/T9NRP1/zUT9f81E/X/NRP1/zUT9f81E/X/NBP0/DUS9JQqAP8GAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAMxHzLTQT9JE0E/XUNRL09DUS9PQ0E/XUNRP0kDQR8ywAAAAAAAAAAAAA
+        AAAAAAAA8A8AAMADAACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIAB
+        AADAAwAA8A8AAA==
+</value>
+  </data>
+  <metadata name="erpNombre.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="erpNombre.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAANRHzKzUT9I41E/XTNRL08zUS9PM1E/XTNBP0jTYS8ioAAAAAAAAAAAAA
@@ -253,10 +253,10 @@
         AADAAwAA8A8AAA==
 </value>
   </data>
-  <metadata name="erpUsuario.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>346, 17</value>
+  <metadata name="erpClave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>457, 17</value>
   </metadata>
-  <data name="erpUsuario.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="erpClave.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAANRHzKzUT9I41E/XTNRL08zUS9PM1E/XTNBP0jTYS8ioAAAAAAAAAAAAA

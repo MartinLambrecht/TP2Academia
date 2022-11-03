@@ -15,6 +15,9 @@ namespace UI.Desktop
 {
     public partial class Modulos : Form
     {
+
+        public Usuario usuarioActual { get; set; }
+
         public Modulos()
         {
             InitializeComponent();
@@ -31,6 +34,20 @@ namespace UI.Desktop
             AddTextColumn("id", "ID", "ID");
             AddTextColumn("descripcion", "Descripcion", "Descripcion");
 
+        }
+        public Modulos(Usuario usuario) : this()
+        {
+            this.usuarioActual = usuario;
+
+            Autorizacion();
+        }
+
+        private void Autorizacion()
+        {
+
+            this.tsbNuevo.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 2, Validaciones.Permisos.Alta);
+            this.tsbEliminar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 2, Validaciones.Permisos.Baja);
+            this.tsbEditar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 2, Validaciones.Permisos.Modificacion);
         }
 
         public void Listar()

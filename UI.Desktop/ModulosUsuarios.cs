@@ -15,6 +15,9 @@ namespace UI.Desktop
 {
     public partial class ModulosUsuarios : Form
     {
+
+        public Usuario usuarioActual { get; set; }
+
         public ModulosUsuarios()
         {
             InitializeComponent();
@@ -36,6 +39,20 @@ namespace UI.Desktop
             AddCheckColumn("permiteModificacion", "Permite Modificacion", "PermiteModificacion");
             AddCheckColumn("permiteConsulta", "Permite Consulta", "PermiteConsulta");
 
+        }
+        public ModulosUsuarios(Usuario usuario) : this()
+        {
+            this.usuarioActual = usuario;
+
+            Autorizacion();
+        }
+
+        private void Autorizacion()
+        {
+
+            this.tsbNuevo.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 5, Validaciones.Permisos.Alta);
+            this.tsbEliminar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 5, Validaciones.Permisos.Baja);
+            this.tsbEditar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 5, Validaciones.Permisos.Modificacion);
         }
 
         public void Listar()
