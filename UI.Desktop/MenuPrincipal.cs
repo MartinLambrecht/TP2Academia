@@ -27,7 +27,10 @@ namespace UI.Desktop
             {
                 this.Dispose();
             }
-            Autorizacion();
+            else
+            {
+                Autorizacion();
+            }
         }
 
         private void modificarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
