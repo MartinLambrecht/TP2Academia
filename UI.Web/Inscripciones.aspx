@@ -60,11 +60,10 @@
 
         <div class="row justify-content-md-center ">
             <asp:Label ID="lblNota" runat="server" Text="Nota: " CssClass="col-lg-2 text-end" />
-            <asp:TextBox ID="txtNota"  runat="server"  CssClass=" col-md-3"/>
+            <asp:TextBox ID="txtNota" type="number"  runat="server"   CssClass=" col-md-3"/>
+            <asp:RangeValidator runat="server"  MaximumValue="10" MinimunValue="0" ControlToValidate="txtNota"  runat="server" ErrorMessage="La nota debe ser un valor entre 0 y 10." CssClass="col-lg-2 "></asp:RangeValidator>
         </div>
         <br />
-
-
   
         <asp:Panel ID="formActionPanel" runat="server" Height="50px" CssClass="container ">
             <div class="d-flex p-5 align-content-center justify-content-center">
