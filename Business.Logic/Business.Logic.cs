@@ -29,7 +29,7 @@ namespace Business.Logic
 
         public static bool IsValidPassword(string password)
         {
-            return password.Trim().Length > 8;
+            return password.Trim().Length >= 8;
         }
 
         public static bool HasAuthorization(int idUsuario, int idModulo, Permisos permiso)
