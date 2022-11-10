@@ -1,6 +1,8 @@
 ﻿using Business.Entities;
 using Data.Database;
 using System.Collections.Generic;
+using Data.Database.DSInscripcionesTableAdapters;
+using static Data.Database.DSInscripciones;
 
 namespace Business.Logic
 {
@@ -26,6 +28,12 @@ namespace Business.Logic
         public void Delete(int id)
         {
             AlumnoInscripcionAdapter.Delete(id);
+        }
+
+        public InscripcionesDataTable GetInscripciones()
+        {
+            var inscripciones = new InscripcionesTableAdapter().GetData();
+            return inscripciones;
         }
 
         public void Save(AlumnoInscripcion alumnoInscripcion)

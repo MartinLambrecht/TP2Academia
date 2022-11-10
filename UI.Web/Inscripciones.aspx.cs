@@ -112,7 +112,7 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.logic.GetAll();
+            this.gridView.DataSource = this.logic.GetInscripciones();
             this.gridView.DataBind();
         }
 
@@ -153,15 +153,15 @@ namespace UI.Web
         private void EnableForm(bool enabled)
         {
             this.ddlAlumnos.Enabled = enabled;
-            this.ddlAlumnos.DataSource = personaLogic.GetAll().Where(p=>p.TipoPersona == Persona.TipoPersonas.Estudiante).ToList();
-            this.ddlAlumnos.DataTextField = "Legajo";
-            this.ddlAlumnos.DataValueField = "ID";
+            this.ddlAlumnos.DataSource = personaLogic.GetAlumnosConDescripcion();
+            this.ddlAlumnos.DataTextField = "descripcion";
+            this.ddlAlumnos.DataValueField = "id_persona";
             this.ddlAlumnos.DataBind();
 
             this.ddlCurso.Enabled = enabled;
-            this.ddlCurso.DataSource = cursoLogic.GetAll().Where(c=>c.Cupo>0).ToList();
-            this.ddlCurso.DataTextField = "ID";
-            this.ddlCurso.DataValueField = "ID";
+            this.ddlCurso.DataSource = cursoLogic.GetCursosDisponiblesConDescripcion();
+            this.ddlCurso.DataTextField = "descripcion";
+            this.ddlCurso.DataValueField = "id_curso";
             this.ddlCurso.DataBind();
 
             this.txtCondicion.Enabled = enabled;

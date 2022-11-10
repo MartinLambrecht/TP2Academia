@@ -7,14 +7,15 @@
     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
         SelectedRowStyle-BackColor="Black"
         SelectedRowStyle-ForeColor="White"
-        DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CellPadding="8" HorizontalAlign="Center" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="3px">
+        DataKeyNames="id_modulo_usuario" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CellPadding="8" HorizontalAlign="Center" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="3px">
        <Columns>
-           <asp:BoundField HeaderText="IDModulo" DataField="IDModulo" />
-           <asp:BoundField HeaderText="IDUsuario" DataField="IDUsuario" />
-           <asp:CheckBoxField HeaderText="Permite Alta" DataField="PermiteAlta" />
-           <asp:CheckBoxField HeaderText="Permite Baja" DataField="PermiteBaja" />
-           <asp:CheckBoxField HeaderText="Permite Modificacion" DataField="PermiteModificacion" />
-           <asp:CheckBoxField HeaderText="Permite Consulta" DataField="PermiteConsulta" />
+           <asp:BoundField HeaderText="Modulo" DataField="descripcion_modulo" />           
+           <asp:BoundField HeaderText="Usuario" DataField="descripcion_usuario" />
+           <asp:BoundField HeaderText="Persona" DataField="descripcion_persona" />
+           <asp:CheckBoxField HeaderText="Permite Alta" DataField="alta" />
+           <asp:CheckBoxField HeaderText="Permite Baja" DataField="baja" />
+           <asp:CheckBoxField HeaderText="Permite Modificacion" DataField="modificacion" />
+           <asp:CheckBoxField HeaderText="Permite Consulta" DataField="consulta" />
            <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" ControlStyle-CssClass="btn btn-outline-primary"/>
        </Columns>
         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />

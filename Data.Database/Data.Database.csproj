@@ -45,18 +45,42 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter.cs" />
     <Compile Include="ComisionAdapter.cs" />
     <Compile Include="CursoAdapter.cs" />
+    <Compile Include="DSInscripciones.cs">
+      <DependentUpon>DSInscripciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSInscripciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSInscripciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSModulosUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSModulosUsuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSPersonas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPersonas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MateriaAdapter.cs" />
     <Compile Include="ModuloUsuarioAdapter.cs" />
     <Compile Include="ModuloAdapter.cs" />
     <Compile Include="EspecialidadAdapter.cs" />
     <Compile Include="AlumnoInscripcionAdapter.cs" />
     <Compile Include="PersonaAdapter.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -65,6 +89,46 @@
       <Project>{e02455b6-1ad9-45bf-ab61-836a548ad11f}</Project>
       <Name>Business.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DSInscripciones.xsc">
+      <DependentUpon>DSInscripciones.xsd</DependentUpon>
+    </None>
+    <None Include="DSInscripciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSInscripciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSInscripciones.xss">
+      <DependentUpon>DSInscripciones.xsd</DependentUpon>
+    </None>
+    <None Include="DSModulosUsuarios.xsc">
+      <DependentUpon>DSModulosUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DSModulosUsuarios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSModulosUsuarios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSModulosUsuarios.xss">
+      <DependentUpon>DSModulosUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DSPersonas.xsc">
+      <DependentUpon>DSPersonas.xsd</DependentUpon>
+    </None>
+    <None Include="DSPersonas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPersonas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSPersonas.xss">
+      <DependentUpon>DSPersonas.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

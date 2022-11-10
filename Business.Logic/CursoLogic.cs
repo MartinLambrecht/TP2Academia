@@ -1,10 +1,12 @@
 ﻿using Business.Entities;
 using Data.Database;
+using Data.Database.DSInscripcionesTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Data.Database.DSInscripciones;
 
 namespace Business.Logic
 {
@@ -25,6 +27,12 @@ namespace Business.Logic
         public List<Curso> GetAll()
         {
             return CursoData.GetAll();
+        }
+
+        public CursoDisponiblesConDescripcionDataTable GetCursosDisponiblesConDescripcion()
+        {
+            var cursos = new CursoDisponiblesConDescripcionTableAdapter().GetData();
+            return cursos;
         }
 
         public void Delete(int id)

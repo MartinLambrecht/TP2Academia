@@ -7,12 +7,16 @@
     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
         SelectedRowStyle-BackColor="Black"
         SelectedRowStyle-ForeColor="White"
-        DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CellPadding="8" HorizontalAlign="Center" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="3px">
+        DataKeyNames="id_inscripcion" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CellPadding="8" HorizontalAlign="Center" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="3px">
        <Columns>
-           <asp:BoundField HeaderText="IDAlumno" DataField="IDAlumno" />
-           <asp:BoundField HeaderText="IDCurso" DataField="IDCurso" />
-           <asp:BoundField HeaderText="Condicion" DataField="Condicion" />
-           <asp:BoundField HeaderText="Nota" DataField="Nota" />
+           <asp:BoundField HeaderText="Inscripcion" DataField="id_inscripcion" />
+           <asp:BoundField HeaderText="Legajo" DataField="legajo" />           
+           <asp:BoundField HeaderText="Nombre" DataField="nombre" />
+           <asp:BoundField HeaderText="Apellido" DataField="apellido" />
+           <asp:BoundField HeaderText="Comision" DataField="desc_comision" />
+           <asp:BoundField HeaderText="Materia" DataField="desc_materia" />
+           <asp:BoundField HeaderText="Condicion" DataField="condicion" />
+           <asp:BoundField HeaderText="Nota" DataField="nota" />
            <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" ControlStyle-CssClass="btn btn-outline-primary"/>
        </Columns>
         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />

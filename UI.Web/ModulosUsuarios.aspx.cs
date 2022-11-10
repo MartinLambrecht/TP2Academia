@@ -113,7 +113,7 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.logic.GetAll();
+            this.gridView.DataSource = this.logic.GetModulosUsuariosConDescripcion();
             this.gridView.DataBind();
         }
 

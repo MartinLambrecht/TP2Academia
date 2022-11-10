@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSModulosUsuarios" targetNamespace="http://tempuri.org/DSModulosUsuarios.xsd" xmlns:mstns="http://tempuri.org/DSModulosUsuarios.xsd" xmlns="http://tempuri.org/DSModulosUsuarios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="academiaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="academiaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Data.Database.Properties.Settings.GlobalReference.Default.academiaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ModulosUsuariosConDescripcionTableAdapter" GeneratorDataComponentClassName="ModulosUsuariosConDescripcionTableAdapter" Name="ModulosUsuariosConDescripcion" UserDataComponentName="ModulosUsuariosConDescripcionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="academiaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        modulos_usuarios.id_modulo_usuario, modulos.desc_modulo AS descripcion_modulo, CAST(personas.legajo AS varchar(50)) + ' - ' + personas.nombre + ' ' + personas.apellido AS descripcion_persona, modulos_usuarios.alta, 
+                         modulos_usuarios.baja, modulos_usuarios.modificacion, modulos_usuarios.consulta, usuarios.nombre_usuario AS descripcion_usuario
+FROM            modulos INNER JOIN
+                         modulos_usuarios ON modulos.id_modulo = modulos_usuarios.id_modulo INNER JOIN
+                         usuarios ON modulos_usuarios.id_usuario = usuarios.id_usuario INNER JOIN
+                         personas ON usuarios.id_persona = personas.id_persona</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_modulo_usuario" DataSetColumn="id_modulo_usuario" />
+              <Mapping SourceColumn="descripcion_modulo" DataSetColumn="descripcion_modulo" />
+              <Mapping SourceColumn="descripcion_persona" DataSetColumn="descripcion_persona" />
+              <Mapping SourceColumn="alta" DataSetColumn="alta" />
+              <Mapping SourceColumn="baja" DataSetColumn="baja" />
+              <Mapping SourceColumn="modificacion" DataSetColumn="modificacion" />
+              <Mapping SourceColumn="consulta" DataSetColumn="consulta" />
+              <Mapping SourceColumn="descripcion_usuario" DataSetColumn="descripcion_usuario" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSModulosUsuarios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSModulosUsuarios" msprop:Generator_UserDSName="DSModulosUsuarios">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ModulosUsuariosConDescripcion" msprop:Generator_TableClassName="ModulosUsuariosConDescripcionDataTable" msprop:Generator_TableVarName="tableModulosUsuariosConDescripcion" msprop:Generator_TablePropName="ModulosUsuariosConDescripcion" msprop:Generator_RowDeletingName="ModulosUsuariosConDescripcionRowDeleting" msprop:Generator_RowChangingName="ModulosUsuariosConDescripcionRowChanging" msprop:Generator_RowEvHandlerName="ModulosUsuariosConDescripcionRowChangeEventHandler" msprop:Generator_RowDeletedName="ModulosUsuariosConDescripcionRowDeleted" msprop:Generator_UserTableName="ModulosUsuariosConDescripcion" msprop:Generator_RowChangedName="ModulosUsuariosConDescripcionRowChanged" msprop:Generator_RowEvArgName="ModulosUsuariosConDescripcionRowChangeEvent" msprop:Generator_RowClassName="ModulosUsuariosConDescripcionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_modulo_usuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_modulo_usuario" msprop:Generator_ColumnPropNameInRow="id_modulo_usuario" msprop:Generator_ColumnPropNameInTable="id_modulo_usuarioColumn" msprop:Generator_UserColumnName="id_modulo_usuario" type="xs:int" />
+              <xs:element name="descripcion_modulo" msprop:Generator_ColumnVarNameInTable="columndescripcion_modulo" msprop:Generator_ColumnPropNameInRow="descripcion_modulo" msprop:Generator_ColumnPropNameInTable="descripcion_moduloColumn" msprop:Generator_UserColumnName="descripcion_modulo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion_persona" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndescripcion_persona" msprop:Generator_ColumnPropNameInRow="descripcion_persona" msprop:Generator_ColumnPropNameInTable="descripcion_personaColumn" msprop:Generator_UserColumnName="descripcion_persona" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="154" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="alta" msprop:Generator_ColumnVarNameInTable="columnalta" msprop:Generator_ColumnPropNameInRow="alta" msprop:Generator_ColumnPropNameInTable="altaColumn" msprop:Generator_UserColumnName="alta" type="xs:boolean" minOccurs="0" />
+              <xs:element name="baja" msprop:Generator_ColumnVarNameInTable="columnbaja" msprop:Generator_ColumnPropNameInRow="baja" msprop:Generator_ColumnPropNameInTable="bajaColumn" msprop:Generator_UserColumnName="baja" type="xs:boolean" minOccurs="0" />
+              <xs:element name="modificacion" msprop:Generator_ColumnVarNameInTable="columnmodificacion" msprop:Generator_ColumnPropNameInRow="modificacion" msprop:Generator_ColumnPropNameInTable="modificacionColumn" msprop:Generator_UserColumnName="modificacion" type="xs:boolean" minOccurs="0" />
+              <xs:element name="consulta" msprop:Generator_ColumnVarNameInTable="columnconsulta" msprop:Generator_ColumnPropNameInRow="consulta" msprop:Generator_ColumnPropNameInTable="consultaColumn" msprop:Generator_UserColumnName="consulta" type="xs:boolean" minOccurs="0" />
+              <xs:element name="descripcion_usuario" msprop:Generator_ColumnVarNameInTable="columndescripcion_usuario" msprop:Generator_ColumnPropNameInRow="descripcion_usuario" msprop:Generator_ColumnPropNameInTable="descripcion_usuarioColumn" msprop:Generator_UserColumnName="descripcion_usuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ModulosUsuariosConDescripcion" />
+      <xs:field xpath="mstns:id_modulo_usuario" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

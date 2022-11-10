@@ -157,9 +157,9 @@ namespace UI.Web
             this.txtRepetirClave.Enabled = enabled;
 
             this.ddlPersona.Enabled = enabled;
-            this.ddlPersona.DataSource = personaLogic.GetAll();
-            this.ddlPersona.DataTextField = "Legajo";
-            this.ddlPersona.DataValueField = "ID";
+            this.ddlPersona.DataSource = personaLogic.GetPersonasConDescripcion();
+            this.ddlPersona.DataTextField = "descripcion";
+            this.ddlPersona.DataValueField = "id_persona";
             this.ddlPersona.DataBind();
             this.ddlPersona.Items.Insert(0, new ListItem("None", "0"));
         }
