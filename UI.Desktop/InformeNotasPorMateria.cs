@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,13 @@ namespace UI.Desktop
         public InformeNotasPorMateria()
         {
             InitializeComponent();
+
+            ReporteNotasPorMateria rNotasPorMateria = new ReporteNotasPorMateria();
+            rNotasPorMateria.SetDataSource(new AlumnoInscripcionAdapter().GetDSNotasPorMateria());
+            this.crvInformeNotasPorMateria.ReportSource = rNotasPorMateria;
+
             this.crvInformeNotasPorMateria.RefreshReport();
+
         }
     }
 }

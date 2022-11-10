@@ -1,9 +1,11 @@
 using Business.Entities;
+using Data.Database.DSNotasPorMateriaTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using static Data.Database.DSNotasPorMateria;
 
 namespace Data.Database
 {
@@ -181,6 +183,15 @@ namespace Data.Database
             }
         }
 
+        public DSNotasPorMateria GetDSNotasPorMateria()
+        {
+            var dataSet = new DSNotasPorMateria();
+
+            NotasPorMateriaTableAdapter da = new NotasPorMateriaTableAdapter();
+            da.Fill((NotasPorMateriaDataTable)dataSet.Tables["NotasPorMateria"]);
+
+            return dataSet;
+        }
 
         public void Save(AlumnoInscripcion inscripcion)
         {

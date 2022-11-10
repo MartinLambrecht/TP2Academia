@@ -65,6 +65,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSModulosUsuarios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DSNotasPorMateria.cs">
+      <DependentUpon>DSNotasPorMateria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSNotasPorMateria.Designer.cs">
+      <DependentUpon>DSNotasPorMateria.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="DSPersonas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,6 +121,17 @@
     </None>
     <None Include="DSModulosUsuarios.xss">
       <DependentUpon>DSModulosUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DSNotasPorMateria.xsc">
+      <DependentUpon>DSNotasPorMateria.xsd</DependentUpon>
+    </None>
+    <None Include="DSNotasPorMateria.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSNotasPorMateria.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSNotasPorMateria.xss">
+      <DependentUpon>DSNotasPorMateria.xsd</DependentUpon>
     </None>
     <None Include="DSPersonas.xsc">
       <DependentUpon>DSPersonas.xsd</DependentUpon>
