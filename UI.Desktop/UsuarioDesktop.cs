@@ -69,13 +69,10 @@ namespace UI.Desktop
                 this.lblConfirmarClave.Hide();
             }
 
-            //Añadir opcion nula
-            var sourceCombo = personaLogic.GetAll();
-            sourceCombo.Add(new Persona { ID = 0, Legajo = 0 });
 
-            this.cmbIdPersona.DataSource = sourceCombo;
-            this.cmbIdPersona.DisplayMember = "Legajo";
-            this.cmbIdPersona.ValueMember = "ID";
+            this.cmbIdPersona.DataSource = personaLogic.GetPersonasConDescripcion();
+            this.cmbIdPersona.DisplayMember = "descripcion";
+            this.cmbIdPersona.ValueMember = "id_persona";
 
             this.cmbIdPersona.SelectedValue = this.UsuarioActual is null ? 0: this.UsuarioActual.IDPersona;
 
