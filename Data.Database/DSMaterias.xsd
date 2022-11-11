@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DSMateriasPorPlan" targetNamespace="http://tempuri.org/DSMateriasPorPlan.xsd" xmlns:mstns="http://tempuri.org/DSMateriasPorPlan.xsd" xmlns="http://tempuri.org/DSMateriasPorPlan.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DSMaterias" targetNamespace="http://tempuri.org/DSMaterias.xsd" xmlns:mstns="http://tempuri.org/DSMaterias.xsd" xmlns="http://tempuri.org/DSMaterias.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnStringExpress" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnStringExpress (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnStringExpress.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="academiaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="academiaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Data.Database.Properties.Settings.GlobalReference.Default.academiaConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MateriasPorPlanTableAdapter" GeneratorDataComponentClassName="MateriasPorPlanTableAdapter" Name="MateriasPorPlan" UserDataComponentName="MateriasPorPlanTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnStringExpress (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="academiaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        materias.id_materia, materias.desc_materia, materias.hs_semanales, materias.hs_totales, materias.id_plan, planes.id_plan AS Expr1, planes.desc_plan, planes.id_especialidad
+                    <CommandText>SELECT        materias.id_materia, materias.desc_materia, materias.hs_semanales, materias.hs_totales, materias.id_plan, planes.desc_plan, planes.id_especialidad
 FROM            materias INNER JOIN
                          planes ON materias.id_plan = planes.id_plan</CommandText>
                     <Parameters />
@@ -28,7 +28,6 @@ FROM            materias INNER JOIN
               <Mapping SourceColumn="id_plan" DataSetColumn="id_plan" />
               <Mapping SourceColumn="desc_plan" DataSetColumn="desc_plan" />
               <Mapping SourceColumn="id_especialidad" DataSetColumn="id_especialidad" />
-              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -37,10 +36,10 @@ FROM            materias INNER JOIN
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DSMateriasPorPlan" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSMateriasPorPlan" msprop:Generator_UserDSName="DSMateriasPorPlan">
+  <xs:element name="DSMaterias" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSMaterias" msprop:Generator_UserDSName="DSMaterias">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MateriasPorPlan" msprop:Generator_TableClassName="MateriasPorPlanDataTable" msprop:Generator_TableVarName="tableMateriasPorPlan" msprop:Generator_RowChangedName="MateriasPorPlanRowChanged" msprop:Generator_TablePropName="MateriasPorPlan" msprop:Generator_RowDeletingName="MateriasPorPlanRowDeleting" msprop:Generator_RowChangingName="MateriasPorPlanRowChanging" msprop:Generator_RowEvHandlerName="MateriasPorPlanRowChangeEventHandler" msprop:Generator_RowDeletedName="MateriasPorPlanRowDeleted" msprop:Generator_RowClassName="MateriasPorPlanRow" msprop:Generator_UserTableName="MateriasPorPlan" msprop:Generator_RowEvArgName="MateriasPorPlanRowChangeEvent">
+        <xs:element name="MateriasPorPlan" msprop:Generator_TableClassName="MateriasPorPlanDataTable" msprop:Generator_TableVarName="tableMateriasPorPlan" msprop:Generator_TablePropName="MateriasPorPlan" msprop:Generator_RowDeletingName="MateriasPorPlanRowDeleting" msprop:Generator_RowChangingName="MateriasPorPlanRowChanging" msprop:Generator_RowEvHandlerName="MateriasPorPlanRowChangeEventHandler" msprop:Generator_RowDeletedName="MateriasPorPlanRowDeleted" msprop:Generator_UserTableName="MateriasPorPlan" msprop:Generator_RowChangedName="MateriasPorPlanRowChanged" msprop:Generator_RowEvArgName="MateriasPorPlanRowChangeEvent" msprop:Generator_RowClassName="MateriasPorPlanRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_materia" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_materia" msprop:Generator_ColumnPropNameInRow="id_materia" msprop:Generator_ColumnPropNameInTable="id_materiaColumn" msprop:Generator_UserColumnName="id_materia" type="xs:int" />
@@ -62,7 +61,6 @@ FROM            materias INNER JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="id_especialidad" msprop:Generator_ColumnVarNameInTable="columnid_especialidad" msprop:Generator_ColumnPropNameInRow="id_especialidad" msprop:Generator_ColumnPropNameInTable="id_especialidadColumn" msprop:Generator_UserColumnName="id_especialidad" type="xs:int" />
-              <xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -71,7 +69,6 @@ FROM            materias INNER JOIN
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:MateriasPorPlan" />
       <xs:field xpath="mstns:id_materia" />
-      <xs:field xpath="mstns:Expr1" />
     </xs:unique>
   </xs:element>
 </xs:schema>

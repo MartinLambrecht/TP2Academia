@@ -58,6 +58,28 @@ WHERE        (cursos.cupo &gt; 0)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CupoPorMateriaTableAdapter" GeneratorDataComponentClassName="CupoPorMateriaTableAdapter" Name="CupoPorMateria" UserDataComponentName="CupoPorMateriaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="academiaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        comisiones.desc_comision, materias.desc_materia, cursos.anio_calendario, cursos.cupo
+FROM            comisiones INNER JOIN
+                         cursos ON comisiones.id_comision = cursos.id_comision INNER JOIN
+                         materias ON cursos.id_materia = materias.id_materia</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="desc_comision" DataSetColumn="desc_comision" />
+              <Mapping SourceColumn="desc_materia" DataSetColumn="desc_materia" />
+              <Mapping SourceColumn="anio_calendario" DataSetColumn="anio_calendario" />
+              <Mapping SourceColumn="cupo" DataSetColumn="cupo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -66,7 +88,7 @@ WHERE        (cursos.cupo &gt; 0)</CommandText>
   <xs:element name="DSInscripciones" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSInscripciones" msprop:Generator_UserDSName="DSInscripciones">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Inscripciones" msprop:Generator_TableClassName="InscripcionesDataTable" msprop:Generator_TableVarName="tableInscripciones" msprop:Generator_RowChangedName="InscripcionesRowChanged" msprop:Generator_TablePropName="Inscripciones" msprop:Generator_RowDeletingName="InscripcionesRowDeleting" msprop:Generator_RowChangingName="InscripcionesRowChanging" msprop:Generator_RowEvHandlerName="InscripcionesRowChangeEventHandler" msprop:Generator_RowDeletedName="InscripcionesRowDeleted" msprop:Generator_RowClassName="InscripcionesRow" msprop:Generator_UserTableName="Inscripciones" msprop:Generator_RowEvArgName="InscripcionesRowChangeEvent">
+        <xs:element name="Inscripciones" msprop:Generator_TableClassName="InscripcionesDataTable" msprop:Generator_TableVarName="tableInscripciones" msprop:Generator_TablePropName="Inscripciones" msprop:Generator_RowDeletingName="InscripcionesRowDeleting" msprop:Generator_RowChangingName="InscripcionesRowChanging" msprop:Generator_RowEvHandlerName="InscripcionesRowChangeEventHandler" msprop:Generator_RowDeletedName="InscripcionesRowDeleted" msprop:Generator_UserTableName="Inscripciones" msprop:Generator_RowChangedName="InscripcionesRowChanged" msprop:Generator_RowEvArgName="InscripcionesRowChangeEvent" msprop:Generator_RowClassName="InscripcionesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_inscripcion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_inscripcion" msprop:Generator_ColumnPropNameInRow="id_inscripcion" msprop:Generator_ColumnPropNameInTable="id_inscripcionColumn" msprop:Generator_UserColumnName="id_inscripcion" type="xs:int" />
@@ -111,7 +133,7 @@ WHERE        (cursos.cupo &gt; 0)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CursoDisponiblesConDescripcion" msprop:Generator_TableClassName="CursoDisponiblesConDescripcionDataTable" msprop:Generator_TableVarName="tableCursoDisponiblesConDescripcion" msprop:Generator_TablePropName="CursoDisponiblesConDescripcion" msprop:Generator_RowDeletingName="CursoDisponiblesConDescripcionRowDeleting" msprop:Generator_RowChangingName="CursoDisponiblesConDescripcionRowChanging" msprop:Generator_RowEvHandlerName="CursoDisponiblesConDescripcionRowChangeEventHandler" msprop:Generator_RowDeletedName="CursoDisponiblesConDescripcionRowDeleted" msprop:Generator_UserTableName="CursoDisponiblesConDescripcion" msprop:Generator_RowChangedName="CursoDisponiblesConDescripcionRowChanged" msprop:Generator_RowEvArgName="CursoDisponiblesConDescripcionRowChangeEvent" msprop:Generator_RowClassName="CursoDisponiblesConDescripcionRow">
+        <xs:element name="CursoDisponiblesConDescripcion" msprop:Generator_TableClassName="CursoDisponiblesConDescripcionDataTable" msprop:Generator_TableVarName="tableCursoDisponiblesConDescripcion" msprop:Generator_RowChangedName="CursoDisponiblesConDescripcionRowChanged" msprop:Generator_TablePropName="CursoDisponiblesConDescripcion" msprop:Generator_RowDeletingName="CursoDisponiblesConDescripcionRowDeleting" msprop:Generator_RowChangingName="CursoDisponiblesConDescripcionRowChanging" msprop:Generator_RowEvHandlerName="CursoDisponiblesConDescripcionRowChangeEventHandler" msprop:Generator_RowDeletedName="CursoDisponiblesConDescripcionRowDeleted" msprop:Generator_RowClassName="CursoDisponiblesConDescripcionRow" msprop:Generator_UserTableName="CursoDisponiblesConDescripcion" msprop:Generator_RowEvArgName="CursoDisponiblesConDescripcionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_curso" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_curso" msprop:Generator_ColumnPropNameInRow="id_curso" msprop:Generator_ColumnPropNameInTable="id_cursoColumn" msprop:Generator_UserColumnName="id_curso" type="xs:int" />
@@ -122,6 +144,28 @@ WHERE        (cursos.cupo &gt; 0)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CupoPorMateria" msprop:Generator_TableClassName="CupoPorMateriaDataTable" msprop:Generator_TableVarName="tableCupoPorMateria" msprop:Generator_TablePropName="CupoPorMateria" msprop:Generator_RowDeletingName="CupoPorMateriaRowDeleting" msprop:Generator_RowChangingName="CupoPorMateriaRowChanging" msprop:Generator_RowEvHandlerName="CupoPorMateriaRowChangeEventHandler" msprop:Generator_RowDeletedName="CupoPorMateriaRowDeleted" msprop:Generator_UserTableName="CupoPorMateria" msprop:Generator_RowChangedName="CupoPorMateriaRowChanged" msprop:Generator_RowEvArgName="CupoPorMateriaRowChangeEvent" msprop:Generator_RowClassName="CupoPorMateriaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="desc_comision" msprop:Generator_ColumnVarNameInTable="columndesc_comision" msprop:Generator_ColumnPropNameInRow="desc_comision" msprop:Generator_ColumnPropNameInTable="desc_comisionColumn" msprop:Generator_UserColumnName="desc_comision">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc_materia" msprop:Generator_ColumnVarNameInTable="columndesc_materia" msprop:Generator_ColumnPropNameInRow="desc_materia" msprop:Generator_ColumnPropNameInTable="desc_materiaColumn" msprop:Generator_UserColumnName="desc_materia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anio_calendario" msprop:Generator_ColumnVarNameInTable="columnanio_calendario" msprop:Generator_ColumnPropNameInRow="anio_calendario" msprop:Generator_ColumnPropNameInTable="anio_calendarioColumn" msprop:Generator_UserColumnName="anio_calendario" type="xs:int" />
+              <xs:element name="cupo" msprop:Generator_ColumnVarNameInTable="columncupo" msprop:Generator_ColumnPropNameInRow="cupo" msprop:Generator_ColumnPropNameInTable="cupoColumn" msprop:Generator_UserColumnName="cupo" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

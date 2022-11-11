@@ -1,4 +1,5 @@
 ﻿using Business.Entities;
+using Data.Database.DSMateriasTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,33 +7,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Data.Database.DSMaterias;
 
 namespace Data.Database
 {
     public class MateriaAdapter : Adapter
     {
-        private static List<Materia> _Materias;
-
-        private static List<Materia> Materias
-        {
-            get
-            {
-                if (_Materias == null)
-                {
-                    _Materias = new List<Business.Entities.Materia>();
-                    Business.Entities.Materia mat;
-                    mat = new Business.Entities.Materia();
-                    mat.ID = 1;
-                    mat.State = Business.Entities.BusinessEntity.States.Unmodified;
-                    mat.HSSemanales = 6;
-                    mat.HSTotales = 240;
-                    mat.Descripcion = "gggg";
-                    mat.IDPlan = 5;
-                }
-                return _Materias;
-            }
-        }
-
+        
         public List<Materia> GetAll()
         {
 
@@ -105,6 +86,17 @@ namespace Data.Database
                 this.CloseConnection();
             }
             return materia;
+        }
+
+
+        public DSMaterias GetDSMaterias()
+        {
+            var dataSet = new DSMaterias();
+
+            MateriasPorPlanTableAdapter daInscripcion = new MateriasPorPlanTableAdapter();
+            daInscripcion.Fill((MateriasPorPlanDataTable)dataSet.Tables["MateriasPorPlan"]);
+
+            return dataSet;
         }
 
         public void Delete(int ID)

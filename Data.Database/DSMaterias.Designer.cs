@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace UI.Web {
+namespace Data.Database {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace UI.Web {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DSCupoPorMateria")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DSMaterias")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DSCupoPorMateria : global::System.Data.DataSet {
+    public partial class DSMaterias : global::System.Data.DataSet {
         
-        private CupoPorMateriaDataTable tableCupoPorMateria;
+        private MateriasPorPlanDataTable tableMateriasPorPlan;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DSCupoPorMateria() {
+        public DSMaterias() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace UI.Web {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DSCupoPorMateria(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DSMaterias(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace UI.Web {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["CupoPorMateria"] != null)) {
-                    base.Tables.Add(new CupoPorMateriaDataTable(ds.Tables["CupoPorMateria"]));
+                if ((ds.Tables["MateriasPorPlan"] != null)) {
+                    base.Tables.Add(new MateriasPorPlanDataTable(ds.Tables["MateriasPorPlan"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace UI.Web {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public CupoPorMateriaDataTable CupoPorMateria {
+        public MateriasPorPlanDataTable MateriasPorPlan {
             get {
-                return this.tableCupoPorMateria;
+                return this.tableMateriasPorPlan;
             }
         }
         
@@ -127,7 +127,7 @@ namespace UI.Web {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DSCupoPorMateria cln = ((DSCupoPorMateria)(base.Clone()));
+            DSMaterias cln = ((DSMaterias)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace UI.Web {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["CupoPorMateria"] != null)) {
-                    base.Tables.Add(new CupoPorMateriaDataTable(ds.Tables["CupoPorMateria"]));
+                if ((ds.Tables["MateriasPorPlan"] != null)) {
+                    base.Tables.Add(new MateriasPorPlanDataTable(ds.Tables["MateriasPorPlan"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace UI.Web {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableCupoPorMateria = ((CupoPorMateriaDataTable)(base.Tables["CupoPorMateria"]));
+            this.tableMateriasPorPlan = ((MateriasPorPlanDataTable)(base.Tables["MateriasPorPlan"]));
             if ((initTable == true)) {
-                if ((this.tableCupoPorMateria != null)) {
-                    this.tableCupoPorMateria.InitVars();
+                if ((this.tableMateriasPorPlan != null)) {
+                    this.tableMateriasPorPlan.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace UI.Web {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DSCupoPorMateria";
+            this.DataSetName = "DSMaterias";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DSCupoPorMateria.xsd";
+            this.Namespace = "http://tempuri.org/DSMaterias.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableCupoPorMateria = new CupoPorMateriaDataTable();
-            base.Tables.Add(this.tableCupoPorMateria);
+            this.tableMateriasPorPlan = new MateriasPorPlanDataTable();
+            base.Tables.Add(this.tableMateriasPorPlan);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeCupoPorMateria() {
+        private bool ShouldSerializeMateriasPorPlan() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace UI.Web {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DSCupoPorMateria ds = new DSCupoPorMateria();
+            DSMaterias ds = new DSMaterias();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,33 @@ namespace UI.Web {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void CupoPorMateriaRowChangeEventHandler(object sender, CupoPorMateriaRowChangeEvent e);
+        public delegate void MateriasPorPlanRowChangeEventHandler(object sender, MateriasPorPlanRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class CupoPorMateriaDataTable : global::System.Data.TypedTableBase<CupoPorMateriaRow> {
+        public partial class MateriasPorPlanDataTable : global::System.Data.TypedTableBase<MateriasPorPlanRow> {
             
-            private global::System.Data.DataColumn columndesc_comision;
+            private global::System.Data.DataColumn columnid_materia;
             
             private global::System.Data.DataColumn columndesc_materia;
             
-            private global::System.Data.DataColumn columnanio_calendario;
+            private global::System.Data.DataColumn columnhs_semanales;
             
-            private global::System.Data.DataColumn columncupo;
+            private global::System.Data.DataColumn columnhs_totales;
+            
+            private global::System.Data.DataColumn columnid_plan;
+            
+            private global::System.Data.DataColumn columndesc_plan;
+            
+            private global::System.Data.DataColumn columnid_especialidad;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CupoPorMateriaDataTable() {
-                this.TableName = "CupoPorMateria";
+            public MateriasPorPlanDataTable() {
+                this.TableName = "MateriasPorPlan";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +304,7 @@ namespace UI.Web {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CupoPorMateriaDataTable(global::System.Data.DataTable table) {
+            internal MateriasPorPlanDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,16 +321,16 @@ namespace UI.Web {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected CupoPorMateriaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected MateriasPorPlanDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn desc_comisionColumn {
+            public global::System.Data.DataColumn id_materiaColumn {
                 get {
-                    return this.columndesc_comision;
+                    return this.columnid_materia;
                 }
             }
             
@@ -338,17 +344,41 @@ namespace UI.Web {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn anio_calendarioColumn {
+            public global::System.Data.DataColumn hs_semanalesColumn {
                 get {
-                    return this.columnanio_calendario;
+                    return this.columnhs_semanales;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn cupoColumn {
+            public global::System.Data.DataColumn hs_totalesColumn {
                 get {
-                    return this.columncupo;
+                    return this.columnhs_totales;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_planColumn {
+                get {
+                    return this.columnid_plan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn desc_planColumn {
+                get {
+                    return this.columndesc_plan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_especialidadColumn {
+                get {
+                    return this.columnid_especialidad;
                 }
             }
             
@@ -363,48 +393,58 @@ namespace UI.Web {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CupoPorMateriaRow this[int index] {
+            public MateriasPorPlanRow this[int index] {
                 get {
-                    return ((CupoPorMateriaRow)(this.Rows[index]));
+                    return ((MateriasPorPlanRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CupoPorMateriaRowChangeEventHandler CupoPorMateriaRowChanging;
+            public event MateriasPorPlanRowChangeEventHandler MateriasPorPlanRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CupoPorMateriaRowChangeEventHandler CupoPorMateriaRowChanged;
+            public event MateriasPorPlanRowChangeEventHandler MateriasPorPlanRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CupoPorMateriaRowChangeEventHandler CupoPorMateriaRowDeleting;
+            public event MateriasPorPlanRowChangeEventHandler MateriasPorPlanRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CupoPorMateriaRowChangeEventHandler CupoPorMateriaRowDeleted;
+            public event MateriasPorPlanRowChangeEventHandler MateriasPorPlanRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddCupoPorMateriaRow(CupoPorMateriaRow row) {
+            public void AddMateriasPorPlanRow(MateriasPorPlanRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CupoPorMateriaRow AddCupoPorMateriaRow(string desc_comision, string desc_materia, int anio_calendario, int cupo) {
-                CupoPorMateriaRow rowCupoPorMateriaRow = ((CupoPorMateriaRow)(this.NewRow()));
+            public MateriasPorPlanRow AddMateriasPorPlanRow(string desc_materia, int hs_semanales, int hs_totales, int id_plan, string desc_plan, int id_especialidad) {
+                MateriasPorPlanRow rowMateriasPorPlanRow = ((MateriasPorPlanRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        desc_comision,
+                        null,
                         desc_materia,
-                        anio_calendario,
-                        cupo};
-                rowCupoPorMateriaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCupoPorMateriaRow);
-                return rowCupoPorMateriaRow;
+                        hs_semanales,
+                        hs_totales,
+                        id_plan,
+                        desc_plan,
+                        id_especialidad};
+                rowMateriasPorPlanRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMateriasPorPlanRow);
+                return rowMateriasPorPlanRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MateriasPorPlanRow FindByid_materia(int id_materia) {
+                return ((MateriasPorPlanRow)(this.Rows.Find(new object[] {
+                            id_materia})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                CupoPorMateriaDataTable cln = ((CupoPorMateriaDataTable)(base.Clone()));
+                MateriasPorPlanDataTable cln = ((MateriasPorPlanDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -412,61 +452,80 @@ namespace UI.Web {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new CupoPorMateriaDataTable();
+                return new MateriasPorPlanDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columndesc_comision = base.Columns["desc_comision"];
+                this.columnid_materia = base.Columns["id_materia"];
                 this.columndesc_materia = base.Columns["desc_materia"];
-                this.columnanio_calendario = base.Columns["anio_calendario"];
-                this.columncupo = base.Columns["cupo"];
+                this.columnhs_semanales = base.Columns["hs_semanales"];
+                this.columnhs_totales = base.Columns["hs_totales"];
+                this.columnid_plan = base.Columns["id_plan"];
+                this.columndesc_plan = base.Columns["desc_plan"];
+                this.columnid_especialidad = base.Columns["id_especialidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columndesc_comision = new global::System.Data.DataColumn("desc_comision", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndesc_comision);
+                this.columnid_materia = new global::System.Data.DataColumn("id_materia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_materia);
                 this.columndesc_materia = new global::System.Data.DataColumn("desc_materia", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndesc_materia);
-                this.columnanio_calendario = new global::System.Data.DataColumn("anio_calendario", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnanio_calendario);
-                this.columncupo = new global::System.Data.DataColumn("cupo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncupo);
-                this.columndesc_comision.AllowDBNull = false;
-                this.columndesc_comision.MaxLength = 50;
+                this.columnhs_semanales = new global::System.Data.DataColumn("hs_semanales", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhs_semanales);
+                this.columnhs_totales = new global::System.Data.DataColumn("hs_totales", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhs_totales);
+                this.columnid_plan = new global::System.Data.DataColumn("id_plan", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_plan);
+                this.columndesc_plan = new global::System.Data.DataColumn("desc_plan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndesc_plan);
+                this.columnid_especialidad = new global::System.Data.DataColumn("id_especialidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_especialidad);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid_materia}, true));
+                this.columnid_materia.AutoIncrement = true;
+                this.columnid_materia.AutoIncrementSeed = -1;
+                this.columnid_materia.AutoIncrementStep = -1;
+                this.columnid_materia.AllowDBNull = false;
+                this.columnid_materia.ReadOnly = true;
+                this.columnid_materia.Unique = true;
                 this.columndesc_materia.AllowDBNull = false;
                 this.columndesc_materia.MaxLength = 50;
-                this.columnanio_calendario.AllowDBNull = false;
-                this.columncupo.AllowDBNull = false;
+                this.columnhs_semanales.AllowDBNull = false;
+                this.columnhs_totales.AllowDBNull = false;
+                this.columnid_plan.AllowDBNull = false;
+                this.columndesc_plan.AllowDBNull = false;
+                this.columndesc_plan.MaxLength = 50;
+                this.columnid_especialidad.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CupoPorMateriaRow NewCupoPorMateriaRow() {
-                return ((CupoPorMateriaRow)(this.NewRow()));
+            public MateriasPorPlanRow NewMateriasPorPlanRow() {
+                return ((MateriasPorPlanRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new CupoPorMateriaRow(builder);
+                return new MateriasPorPlanRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(CupoPorMateriaRow);
+                return typeof(MateriasPorPlanRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.CupoPorMateriaRowChanged != null)) {
-                    this.CupoPorMateriaRowChanged(this, new CupoPorMateriaRowChangeEvent(((CupoPorMateriaRow)(e.Row)), e.Action));
+                if ((this.MateriasPorPlanRowChanged != null)) {
+                    this.MateriasPorPlanRowChanged(this, new MateriasPorPlanRowChangeEvent(((MateriasPorPlanRow)(e.Row)), e.Action));
                 }
             }
             
@@ -474,8 +533,8 @@ namespace UI.Web {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.CupoPorMateriaRowChanging != null)) {
-                    this.CupoPorMateriaRowChanging(this, new CupoPorMateriaRowChangeEvent(((CupoPorMateriaRow)(e.Row)), e.Action));
+                if ((this.MateriasPorPlanRowChanging != null)) {
+                    this.MateriasPorPlanRowChanging(this, new MateriasPorPlanRowChangeEvent(((MateriasPorPlanRow)(e.Row)), e.Action));
                 }
             }
             
@@ -483,8 +542,8 @@ namespace UI.Web {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.CupoPorMateriaRowDeleted != null)) {
-                    this.CupoPorMateriaRowDeleted(this, new CupoPorMateriaRowChangeEvent(((CupoPorMateriaRow)(e.Row)), e.Action));
+                if ((this.MateriasPorPlanRowDeleted != null)) {
+                    this.MateriasPorPlanRowDeleted(this, new MateriasPorPlanRowChangeEvent(((MateriasPorPlanRow)(e.Row)), e.Action));
                 }
             }
             
@@ -492,14 +551,14 @@ namespace UI.Web {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.CupoPorMateriaRowDeleting != null)) {
-                    this.CupoPorMateriaRowDeleting(this, new CupoPorMateriaRowChangeEvent(((CupoPorMateriaRow)(e.Row)), e.Action));
+                if ((this.MateriasPorPlanRowDeleting != null)) {
+                    this.MateriasPorPlanRowDeleting(this, new MateriasPorPlanRowChangeEvent(((MateriasPorPlanRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveCupoPorMateriaRow(CupoPorMateriaRow row) {
+            public void RemoveMateriasPorPlanRow(MateriasPorPlanRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -508,7 +567,7 @@ namespace UI.Web {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSCupoPorMateria ds = new DSCupoPorMateria();
+                DSMaterias ds = new DSMaterias();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -526,7 +585,7 @@ namespace UI.Web {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "CupoPorMateriaDataTable";
+                attribute2.FixedValue = "MateriasPorPlanDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -570,25 +629,25 @@ namespace UI.Web {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class CupoPorMateriaRow : global::System.Data.DataRow {
+        public partial class MateriasPorPlanRow : global::System.Data.DataRow {
             
-            private CupoPorMateriaDataTable tableCupoPorMateria;
+            private MateriasPorPlanDataTable tableMateriasPorPlan;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CupoPorMateriaRow(global::System.Data.DataRowBuilder rb) : 
+            internal MateriasPorPlanRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCupoPorMateria = ((CupoPorMateriaDataTable)(this.Table));
+                this.tableMateriasPorPlan = ((MateriasPorPlanDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string desc_comision {
+            public int id_materia {
                 get {
-                    return ((string)(this[this.tableCupoPorMateria.desc_comisionColumn]));
+                    return ((int)(this[this.tableMateriasPorPlan.id_materiaColumn]));
                 }
                 set {
-                    this[this.tableCupoPorMateria.desc_comisionColumn] = value;
+                    this[this.tableMateriasPorPlan.id_materiaColumn] = value;
                 }
             }
             
@@ -596,32 +655,65 @@ namespace UI.Web {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string desc_materia {
                 get {
-                    return ((string)(this[this.tableCupoPorMateria.desc_materiaColumn]));
+                    return ((string)(this[this.tableMateriasPorPlan.desc_materiaColumn]));
                 }
                 set {
-                    this[this.tableCupoPorMateria.desc_materiaColumn] = value;
+                    this[this.tableMateriasPorPlan.desc_materiaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int anio_calendario {
+            public int hs_semanales {
                 get {
-                    return ((int)(this[this.tableCupoPorMateria.anio_calendarioColumn]));
+                    return ((int)(this[this.tableMateriasPorPlan.hs_semanalesColumn]));
                 }
                 set {
-                    this[this.tableCupoPorMateria.anio_calendarioColumn] = value;
+                    this[this.tableMateriasPorPlan.hs_semanalesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int cupo {
+            public int hs_totales {
                 get {
-                    return ((int)(this[this.tableCupoPorMateria.cupoColumn]));
+                    return ((int)(this[this.tableMateriasPorPlan.hs_totalesColumn]));
                 }
                 set {
-                    this[this.tableCupoPorMateria.cupoColumn] = value;
+                    this[this.tableMateriasPorPlan.hs_totalesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_plan {
+                get {
+                    return ((int)(this[this.tableMateriasPorPlan.id_planColumn]));
+                }
+                set {
+                    this[this.tableMateriasPorPlan.id_planColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string desc_plan {
+                get {
+                    return ((string)(this[this.tableMateriasPorPlan.desc_planColumn]));
+                }
+                set {
+                    this[this.tableMateriasPorPlan.desc_planColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_especialidad {
+                get {
+                    return ((int)(this[this.tableMateriasPorPlan.id_especialidadColumn]));
+                }
+                set {
+                    this[this.tableMateriasPorPlan.id_especialidadColumn] = value;
                 }
             }
         }
@@ -630,22 +722,22 @@ namespace UI.Web {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class CupoPorMateriaRowChangeEvent : global::System.EventArgs {
+        public class MateriasPorPlanRowChangeEvent : global::System.EventArgs {
             
-            private CupoPorMateriaRow eventRow;
+            private MateriasPorPlanRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CupoPorMateriaRowChangeEvent(CupoPorMateriaRow row, global::System.Data.DataRowAction action) {
+            public MateriasPorPlanRowChangeEvent(MateriasPorPlanRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CupoPorMateriaRow Row {
+            public MateriasPorPlanRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -661,7 +753,7 @@ namespace UI.Web {
         }
     }
 }
-namespace UI.Web.DSCupoPorMateriaTableAdapters {
+namespace Data.Database.DSMateriasTableAdapters {
     
     
     /// <summary>
@@ -673,7 +765,7 @@ namespace UI.Web.DSCupoPorMateriaTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class CupoPorMateriaTableAdapter : global::System.ComponentModel.Component {
+    public partial class MateriasPorPlanTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -687,7 +779,7 @@ namespace UI.Web.DSCupoPorMateriaTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public CupoPorMateriaTableAdapter() {
+        public MateriasPorPlanTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -784,11 +876,14 @@ namespace UI.Web.DSCupoPorMateriaTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "CupoPorMateria";
-            tableMapping.ColumnMappings.Add("desc_comision", "desc_comision");
+            tableMapping.DataSetTable = "MateriasPorPlan";
+            tableMapping.ColumnMappings.Add("id_materia", "id_materia");
             tableMapping.ColumnMappings.Add("desc_materia", "desc_materia");
-            tableMapping.ColumnMappings.Add("anio_calendario", "anio_calendario");
-            tableMapping.ColumnMappings.Add("cupo", "cupo");
+            tableMapping.ColumnMappings.Add("hs_semanales", "hs_semanales");
+            tableMapping.ColumnMappings.Add("hs_totales", "hs_totales");
+            tableMapping.ColumnMappings.Add("id_plan", "id_plan");
+            tableMapping.ColumnMappings.Add("desc_plan", "desc_plan");
+            tableMapping.ColumnMappings.Add("id_especialidad", "id_especialidad");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -796,7 +891,7 @@ namespace UI.Web.DSCupoPorMateriaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ConnStringExpress"].ConnectionString;
+            this._connection.ConnectionString = global::Data.Database.Properties.Settings.Default.academiaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -805,10 +900,9 @@ namespace UI.Web.DSCupoPorMateriaTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        comisiones.desc_comision, materias.desc_materia, cursos.anio_calendario, cursos.cupo
-FROM            comisiones INNER JOIN
-                         cursos ON comisiones.id_comision = cursos.id_comision INNER JOIN
-                         materias ON cursos.id_materia = materias.id_materia";
+            this._commandCollection[0].CommandText = @"SELECT        materias.id_materia, materias.desc_materia, materias.hs_semanales, materias.hs_totales, materias.id_plan, planes.desc_plan, planes.id_especialidad
+FROM            materias INNER JOIN
+                         planes ON materias.id_plan = planes.id_plan";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -816,7 +910,7 @@ FROM            comisiones INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSCupoPorMateria.CupoPorMateriaDataTable dataTable) {
+        public virtual int Fill(DSMaterias.MateriasPorPlanDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -829,9 +923,9 @@ FROM            comisiones INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSCupoPorMateria.CupoPorMateriaDataTable GetData() {
+        public virtual DSMaterias.MateriasPorPlanDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSCupoPorMateria.CupoPorMateriaDataTable dataTable = new DSCupoPorMateria.CupoPorMateriaDataTable();
+            DSMaterias.MateriasPorPlanDataTable dataTable = new DSMaterias.MateriasPorPlanDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -905,7 +999,7 @@ FROM            comisiones INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DSCupoPorMateria dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DSMaterias dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -915,7 +1009,7 @@ FROM            comisiones INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DSCupoPorMateria dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DSMaterias dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -925,7 +1019,7 @@ FROM            comisiones INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DSCupoPorMateria dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DSMaterias dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -959,7 +1053,7 @@ FROM            comisiones INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DSCupoPorMateria dataSet) {
+        public virtual int UpdateAll(DSMaterias dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -9,10 +9,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using UI.Web.DSCupoPorMateriaTableAdapters;
-using UI.Web.DSMateriasPorPlanTableAdapters;
-using static UI.Web.DSCupoPorMateria;
-using static UI.Web.DSMateriasPorPlan;
 
 namespace UI.Web
 {
@@ -37,16 +33,8 @@ namespace UI.Web
 
         protected void btnMateriasPorPlanes_Click(object sender, EventArgs e)
         {
-            
-            MateriasPorPlanTableAdapter da = new MateriasPorPlanTableAdapter();
-            DSMateriasPorPlan dsMateriasPorPlan = new DSMateriasPorPlan();
-
-            MateriasPorPlanDataTable dt = (MateriasPorPlanDataTable)dsMateriasPorPlan.Tables["MateriasPorPlan"];
-
-            da.Fill(dt);
-
             ReporteMateriasPorPlan rMateriasPorPlan = new ReporteMateriasPorPlan();
-            rMateriasPorPlan.SetDataSource(dsMateriasPorPlan);
+            rMateriasPorPlan.SetDataSource(new MateriaAdapter().GetDSMaterias());
             crv.ReportSource = rMateriasPorPlan;
 
             rMateriasPorPlan.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Informacion Notas.");
@@ -54,15 +42,10 @@ namespace UI.Web
 
         protected void btnCupoPorMateria_Click(object sender, EventArgs e)
         {
-            CupoPorMateriaTableAdapter da = new CupoPorMateriaTableAdapter();
-            DSCupoPorMateria dsCupoPorMateria = new DSCupoPorMateria();
-
-            CupoPorMateriaDataTable dt = (CupoPorMateriaDataTable)dsCupoPorMateria.Tables["CupoPorMateria"];
-
-            da.Fill(dt);
+           
 
             ReporteCupoPorMateria rCupoPorMateria = new ReporteCupoPorMateria();
-            rCupoPorMateria.SetDataSource(dsCupoPorMateria);
+            rCupoPorMateria.SetDataSource(new AlumnoInscripcionAdapter().GetDSInscripciones());
             crv.ReportSource = rCupoPorMateria;
 
             rCupoPorMateria.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Informacion Notas.");

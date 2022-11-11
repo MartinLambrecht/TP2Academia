@@ -1,10 +1,12 @@
 using Business.Entities;
+using Data.Database.DSInscripcionesTableAdapters;
 using Data.Database.DSNotasPorMateriaTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using static Data.Database.DSInscripciones;
 using static Data.Database.DSNotasPorMateria;
 
 namespace Data.Database
@@ -96,6 +98,22 @@ namespace Data.Database
 
             NotasPorMateriaTableAdapter da = new NotasPorMateriaTableAdapter();
             da.Fill((NotasPorMateriaDataTable)dataSet.Tables["NotasPorMateria"]);
+
+            return dataSet;
+        }
+
+        public DSInscripciones GetDSInscripciones()
+        {
+            var dataSet = new DSInscripciones();
+
+            InscripcionesTableAdapter daInscripcion = new InscripcionesTableAdapter();
+            daInscripcion.Fill((InscripcionesDataTable)dataSet.Tables["Inscripciones"]);
+
+            CursoDisponiblesConDescripcionTableAdapter daCursoDisponibleConDescripcion = new CursoDisponiblesConDescripcionTableAdapter();
+            daCursoDisponibleConDescripcion.Fill((CursoDisponiblesConDescripcionDataTable)dataSet.Tables["CursoDisponiblesConDescripcion"]);
+
+            CupoPorMateriaTableAdapter daCupoPorMateria = new CupoPorMateriaTableAdapter();
+            daCupoPorMateria.Fill((CupoPorMateriaDataTable)dataSet.Tables["CupoPorMateria"]);
 
             return dataSet;
         }

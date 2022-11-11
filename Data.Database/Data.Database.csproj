@@ -60,6 +60,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSInscripciones.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DSMaterias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMaterias.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSModulosUsuarios.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +120,17 @@
     </None>
     <None Include="DSInscripciones.xss">
       <DependentUpon>DSInscripciones.xsd</DependentUpon>
+    </None>
+    <None Include="DSMaterias.xsc">
+      <DependentUpon>DSMaterias.xsd</DependentUpon>
+    </None>
+    <None Include="DSMaterias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMaterias.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSMaterias.xss">
+      <DependentUpon>DSMaterias.xsd</DependentUpon>
     </None>
     <None Include="DSModulosUsuarios.xsc">
       <DependentUpon>DSModulosUsuarios.xsd</DependentUpon>
