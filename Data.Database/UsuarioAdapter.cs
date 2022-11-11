@@ -1,9 +1,11 @@
 using Business.Entities;
+using Data.Database.DSUsuariosTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using static Data.Database.DSUsuarios;
 
 namespace Data.Database
 {
@@ -89,6 +91,20 @@ namespace Data.Database
                 this.CloseConnection();
             }
             return usuarioPedido;
+        }
+
+        public UsuariosConPersonaDataTable GetUsuariosConPersona()
+        {
+            return new UsuariosConPersonaTableAdapter().GetData();
+        }
+        public DSUsuarios GetDSUsuarios()
+        {
+            var dataSet = new DSUsuarios();
+
+            UsuariosConPersonaTableAdapter da = new UsuariosConPersonaTableAdapter();
+            da.Fill((UsuariosConPersonaDataTable)dataSet.Tables["UsuariosConPersona"]);
+
+            return dataSet;
         }
 
         public void Delete(int ID)

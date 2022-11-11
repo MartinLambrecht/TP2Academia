@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace UI.Desktop
         public InformeUsuarios()
         {
             InitializeComponent();
+
+            ReporteUsuarios rUsuarios = new ReporteUsuarios();
+            rUsuarios.SetDataSource(new UsuarioAdapter().GetDSUsuarios());
+            this.crvInformeUsuarios.ReportSource = rUsuarios;
+
             this.crvInformeUsuarios.RefreshReport();
         }
 

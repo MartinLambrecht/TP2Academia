@@ -78,6 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSPersonas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DSUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSUsuarios.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MateriaAdapter.cs" />
     <Compile Include="ModuloUsuarioAdapter.cs" />
     <Compile Include="ModuloAdapter.cs" />
@@ -143,6 +148,17 @@
     </None>
     <None Include="DSPersonas.xss">
       <DependentUpon>DSPersonas.xsd</DependentUpon>
+    </None>
+    <None Include="DSUsuarios.xsc">
+      <DependentUpon>DSUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DSUsuarios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSUsuarios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSUsuarios.xss">
+      <DependentUpon>DSUsuarios.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

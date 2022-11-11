@@ -90,6 +90,16 @@ namespace Data.Database
             return inscripcionPedido;
         }
 
+        public DSNotasPorMateria GetDSNotasPorMateria()
+        {
+            var dataSet = new DSNotasPorMateria();
+
+            NotasPorMateriaTableAdapter da = new NotasPorMateriaTableAdapter();
+            da.Fill((NotasPorMateriaDataTable)dataSet.Tables["NotasPorMateria"]);
+
+            return dataSet;
+        }
+
         public void Delete(int ID)
         {
             try
@@ -110,6 +120,7 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+
 
         public void Update(AlumnoInscripcion modifiedInscripcion)
         {
@@ -181,16 +192,6 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-        }
-
-        public DSNotasPorMateria GetDSNotasPorMateria()
-        {
-            var dataSet = new DSNotasPorMateria();
-
-            NotasPorMateriaTableAdapter da = new NotasPorMateriaTableAdapter();
-            da.Fill((NotasPorMateriaDataTable)dataSet.Tables["NotasPorMateria"]);
-
-            return dataSet;
         }
 
         public void Save(AlumnoInscripcion inscripcion)
