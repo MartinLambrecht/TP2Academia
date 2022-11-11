@@ -1,9 +1,7 @@
 ﻿using Business.Entities;
 using Data.Database;
-using Data.Database.DSInscripcionesTableAdapters;
 using Data.Database.DSPersonasTableAdapters;
 using System.Collections.Generic;
-using static Data.Database.DSInscripciones;
 using static Data.Database.DSPersonas;
 
 namespace Business.Logic

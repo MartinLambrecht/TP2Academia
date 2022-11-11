@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Text;
 
 namespace Data.Database
 {
@@ -10,11 +8,12 @@ namespace Data.Database
     {
         //private SqlConnection sqlConnection = new SqlConnection("ConnectionString;");
         //Clave por defecto a utlizar para la cadena de conexion
-        const string consKeyDefaultCnnString = "ConnStringExpress";
+        private const string consKeyDefaultCnnString = "ConnStringExpress";
 
         private SqlConnection _sqlConn;
 
-        public SqlConnection sqlConn { get { return _sqlConn; } set { _sqlConn = value; } }
+        public SqlConnection sqlConn
+        { get { return _sqlConn; } set { _sqlConn = value; } }
 
         protected void OpenConnection()
         {

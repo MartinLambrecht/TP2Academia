@@ -1,7 +1,6 @@
 ﻿using Business.Entities;
 using Business.Logic;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace UI.Desktop
@@ -11,6 +10,7 @@ namespace UI.Desktop
         public Usuario UsuarioActual;
 
         private PersonaLogic _personaLogic;
+
         public PersonaLogic personaLogic
         {
             get
@@ -58,8 +58,6 @@ namespace UI.Desktop
                 this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
                 this.txtClave.Text = this.UsuarioActual.Clave;
                 this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
-
-                
             }
             if (modo == ModoForm.Baja)
             {
@@ -69,13 +67,11 @@ namespace UI.Desktop
                 this.lblConfirmarClave.Hide();
             }
 
-
             this.cmbIdPersona.DataSource = personaLogic.GetPersonasConDescripcion();
             this.cmbIdPersona.DisplayMember = "descripcion";
             this.cmbIdPersona.ValueMember = "id_persona";
 
-            this.cmbIdPersona.SelectedValue = this.UsuarioActual is null ? 0: this.UsuarioActual.IDPersona;
-
+            this.cmbIdPersona.SelectedValue = this.UsuarioActual is null ? 0 : this.UsuarioActual.IDPersona;
 
             switch (modo)
             {
@@ -127,7 +123,6 @@ namespace UI.Desktop
             {
                 this.UsuarioActual.IDPersona = Convert.ToInt32(this.cmbIdPersona.SelectedValue);
             }
-
         }
 
         private new void GuardarCambios()
@@ -202,7 +197,6 @@ namespace UI.Desktop
             }
         }
 
-
         private bool ValidarCampoVacio(TextBox txtActual, ErrorProvider erpActual, string mensajeError)
         {
             if (String.IsNullOrEmpty(txtActual.Text.Trim()))
@@ -216,9 +210,8 @@ namespace UI.Desktop
                 return true;
             }
         }
-        #endregion
 
-
+        #endregion ValidacionesPersonalizadas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {

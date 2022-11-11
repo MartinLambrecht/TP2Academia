@@ -1,7 +1,7 @@
 ﻿using Business.Entities;
 using Data.Database;
-using System.Collections.Generic;
 using Data.Database.DSInscripcionesTableAdapters;
+using System.Collections.Generic;
 using static Data.Database.DSInscripciones;
 
 namespace Business.Logic

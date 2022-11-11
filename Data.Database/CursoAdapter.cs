@@ -3,15 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.Database
 {
     public class CursoAdapter : Adapter
     {
-
         public List<Curso> GetAll()
         {
             List<Curso> cursos = new List<Curso>();
@@ -51,7 +47,6 @@ namespace Data.Database
 
         public Business.Entities.Curso GetOne(int ID)
         {
-
             Curso cur = new Curso();
             try
             {
@@ -65,7 +60,6 @@ namespace Data.Database
 
                 if (drCurso.Read())
                 {
-
                     cur.ID = (int)drCurso["id_curso"];
                     cur.IDMateria = (int)drCurso["id_materia"];
                     cur.IDComision = (int)drCurso["id_comision"];
@@ -74,7 +68,6 @@ namespace Data.Database
                 }
                 drCurso.Close();
             }
-
             catch (Exception Ex)
             {
                 throw new Exception("Error al recuperar datos del curso", Ex); ;
@@ -117,7 +110,6 @@ namespace Data.Database
                 SqlCommand cmdInsert = new SqlCommand("UPDATE cursos SET id_materia=@id_materia, id_comision=@id_comision, anio_calendario = @anio_calendario, cupo = @cupo " +
                 "WHERE id_curso=@id", sqlConn);
 
-                
                 cmdInsert.Parameters.Add("@id", SqlDbType.Int).Value = curso.ID;
                 cmdInsert.Parameters.Add("@id_comision", SqlDbType.Int).Value = curso.IDComision;
                 cmdInsert.Parameters.Add("@id_materia", SqlDbType.Int).Value = curso.IDMateria;
@@ -145,7 +137,6 @@ namespace Data.Database
                  "values ( @id_materia,@id_comision ,@anio_calendario, @cupo)" +
                   "select @@identity", sqlConn);
 
-
                 cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = curso.IDComision;
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = curso.IDMateria;
                 cmdSave.Parameters.Add("anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
@@ -161,9 +152,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-
         }
-
 
         public void Save(Curso curso)
         {
@@ -171,18 +160,15 @@ namespace Data.Database
             {
                 this.Delete(curso.ID);
             }
-
             else if (curso.State == BusinessEntity.States.New)
             {
                 this.Insert(curso);
             }
-
             else if (curso.State == BusinessEntity.States.Modified)
             {
                 this.Update(curso);
             }
             curso.State = BusinessEntity.States.Unmodified;
         }
-
     }
 }

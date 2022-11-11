@@ -1,21 +1,12 @@
 ﻿using Business.Entities;
 using Business.Logic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace UI.Desktop
 {
     public partial class Especialidades : Form
     {
-
         public Usuario usuarioActual { get; set; }
 
         public Especialidades()
@@ -30,13 +21,11 @@ namespace UI.Desktop
             this.dgvEspecialidades.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgvEspecialidades.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-
             AddTextColumn("id", "ID", "ID");
             AddTextColumn("descripcion", "Descripcion", "Descripcion");
-
         }
 
-        public Especialidades(Usuario usuario):this()
+        public Especialidades(Usuario usuario) : this()
         {
             this.usuarioActual = usuario;
 
@@ -45,7 +34,6 @@ namespace UI.Desktop
 
         private void Autorizacion()
         {
-
             this.tsbNuevo.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 6, Validaciones.Permisos.Alta);
             this.tsbEliminar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 6, Validaciones.Permisos.Baja);
             this.tsbEditar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 6, Validaciones.Permisos.Modificacion);

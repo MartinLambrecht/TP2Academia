@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 using static Data.Database.DSInscripciones;
 using static Data.Database.DSNotasPorMateria;
 
@@ -29,14 +28,14 @@ namespace Data.Database
                     AlumnoInscripcion inscripcion = new AlumnoInscripcion();
 
                     inscripcion.ID = (int)drAlumnoInscripcions["id_inscripcion"];
-                    inscripcion.IDAlumno= (int)drAlumnoInscripcions["id_alumno"];
+                    inscripcion.IDAlumno = (int)drAlumnoInscripcions["id_alumno"];
                     inscripcion.IDCurso = (int)drAlumnoInscripcions["id_curso"];
                     inscripcion.Condicion = (string)drAlumnoInscripcions["condicion"];
                     if (drAlumnoInscripcions["nota"] != DBNull.Value)
                     {
                         inscripcion.Nota = (int)drAlumnoInscripcions["nota"];
                     }
-                    
+
                     inscripcions.Add(inscripcion);
                 }
 
@@ -77,7 +76,6 @@ namespace Data.Database
                     {
                         inscripcionPedido.Nota = (int)drAlumnoInscripcion["nota"];
                     }
-                
                 }
                 drAlumnoInscripcion.Close();
             }
@@ -139,7 +137,6 @@ namespace Data.Database
             }
         }
 
-
         public void Update(AlumnoInscripcion modifiedInscripcion)
         {
             try
@@ -154,9 +151,9 @@ namespace Data.Database
                 cmdUpdate.Parameters.Add("@id_alumno", SqlDbType.Int).Value = modifiedInscripcion.IDAlumno;
                 cmdUpdate.Parameters.Add("@id_curso", SqlDbType.Int).Value = modifiedInscripcion.IDCurso;
                 cmdUpdate.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = modifiedInscripcion.Condicion;
-                
+
                 //cmdUpdate.Parameters.Add("@nota", SqlDbType.Int).Value = modifiedInscripcion.Nota is null ? DBNull.Value : modifiedInscripcion.Nota;
-                if(modifiedInscripcion.Nota is null)
+                if (modifiedInscripcion.Nota is null)
                 {
                     cmdUpdate.Parameters.Add("@nota", SqlDbType.Int).Value = DBNull.Value;
                 }
@@ -164,7 +161,6 @@ namespace Data.Database
                 {
                     cmdUpdate.Parameters.Add("@nota", SqlDbType.Int).Value = modifiedInscripcion.Nota;
                 }
-                
 
                 cmdUpdate.ExecuteNonQuery();
             }

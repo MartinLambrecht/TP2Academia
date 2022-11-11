@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.Database
 {
@@ -93,7 +90,6 @@ namespace Data.Database
 
                 drComision.Close();
             }
-
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar datos de la comision", Ex);
@@ -175,7 +171,6 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-
         }
 
         public void Save(Comision comision)
@@ -184,19 +179,15 @@ namespace Data.Database
             {
                 this.Delete(comision.ID);
             }
-
             else if (comision.State == BusinessEntity.States.New)
             {
                 this.Insert(comision);
             }
-
             else if (comision.State == BusinessEntity.States.Modified)
             {
                 this.Update(comision);
             }
             comision.State = BusinessEntity.States.Unmodified;
-
         }
-
     }
 }

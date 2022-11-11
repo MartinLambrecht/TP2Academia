@@ -41,12 +41,16 @@ namespace Business.Logic
             {
                 case Permisos.Alta:
                     return listModuloUsuario.Any(mu => mu.PermiteAlta);
+
                 case Permisos.Baja:
                     return listModuloUsuario.Any(mu => mu.PermiteBaja);
+
                 case Permisos.Modificacion:
                     return listModuloUsuario.Any(mu => mu.PermiteModificacion);
+
                 case Permisos.Consulta:
                     return listModuloUsuario.Any(mu => mu.PermiteConsulta);
+
                 default:
                     return false;
             }

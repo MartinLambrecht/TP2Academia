@@ -1,21 +1,12 @@
 ﻿using Business.Entities;
 using Business.Logic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace UI.Desktop
 {
     public partial class ModulosUsuarios : Form
     {
-
         public Usuario usuarioActual { get; set; }
 
         public ModulosUsuarios()
@@ -30,7 +21,6 @@ namespace UI.Desktop
             this.dgvModulosUsuarios.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgvModulosUsuarios.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-
             AddTextColumn("id_modulo_usuario", "ID", "ID");
             AddTextColumn("idModulo", "IDModulo", "idModulo");
             AddTextColumn("idUsuario", "IDUsuario", "idUsuario");
@@ -38,8 +28,8 @@ namespace UI.Desktop
             AddCheckColumn("permiteBaja", "Permite Baja", "PermiteBaja");
             AddCheckColumn("permiteModificacion", "Permite Modificacion", "PermiteModificacion");
             AddCheckColumn("permiteConsulta", "Permite Consulta", "PermiteConsulta");
-
         }
+
         public ModulosUsuarios(Usuario usuario) : this()
         {
             this.usuarioActual = usuario;
@@ -49,7 +39,6 @@ namespace UI.Desktop
 
         private void Autorizacion()
         {
-
             this.tsbNuevo.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 5, Validaciones.Permisos.Alta);
             this.tsbEliminar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 5, Validaciones.Permisos.Baja);
             this.tsbEditar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 5, Validaciones.Permisos.Modificacion);

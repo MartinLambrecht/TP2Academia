@@ -1,21 +1,18 @@
 ﻿using Business.Entities;
 using Business.Logic;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace UI.Desktop
 {
     public partial class ModuloUsuarioDesktop : ApplicationForm
     {
-
         private ModuloUsuario ModuloUsuarioActual;
 
         public ModuloUsuarioDesktop()
         {
             InitializeComponent();
         }
-
 
         public ModuloUsuarioDesktop(ModoForm modo) : this()
         {
@@ -34,7 +31,6 @@ namespace UI.Desktop
 
         private new void MapearDeDatos()
         {
-
             this.cmbIdModulo.DisplayMember = "Descripcion";
             this.cmbIdModulo.ValueMember = "ID";
             this.cmbIdModulo.DataSource = new ModulosLogic().GetAll();
@@ -42,7 +38,7 @@ namespace UI.Desktop
             this.cmbIdUsuario.DisplayMember = "NombreUsuario";
             this.cmbIdUsuario.ValueMember = "ID";
             this.cmbIdUsuario.DataSource = new UsuarioLogic().GetAll();
-            
+
             if (modo == ModoForm.Alta)
             {
                 this.txtID.Text = "";//Cuando hace el save lo genera automaticamente autoincremental
@@ -60,8 +56,6 @@ namespace UI.Desktop
                 this.chkModificacion.Checked = this.ModuloUsuarioActual.PermiteModificacion;
                 this.chkConsulta.Checked = this.ModuloUsuarioActual.PermiteConsulta;
             }
-
-
 
             switch (modo)
             {
@@ -148,9 +142,8 @@ namespace UI.Desktop
                 return true;
             }
         }
-        #endregion
 
-
+        #endregion ValidacionesPersonalizadas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {

@@ -1,21 +1,18 @@
 ﻿using Business.Entities;
 using Business.Logic;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace UI.Desktop
 {
     public partial class EspecialidadDesktop : ApplicationForm
     {
-
         private Especialidad EspecialidadActual;
 
         public EspecialidadDesktop()
         {
             InitializeComponent();
         }
-
 
         public EspecialidadDesktop(ModoForm modo) : this()
         {
@@ -119,9 +116,8 @@ namespace UI.Desktop
                 return true;
             }
         }
-        #endregion
 
-
+        #endregion ValidacionesPersonalizadas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {

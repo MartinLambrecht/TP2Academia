@@ -1,21 +1,12 @@
 ﻿using Business.Entities;
 using Business.Logic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace UI.Desktop
 {
     public partial class Modulos : Form
     {
-
         public Usuario usuarioActual { get; set; }
 
         public Modulos()
@@ -30,11 +21,10 @@ namespace UI.Desktop
             this.dgvModulos.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgvModulos.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-
             AddTextColumn("id", "ID", "ID");
             AddTextColumn("descripcion", "Descripcion", "Descripcion");
-
         }
+
         public Modulos(Usuario usuario) : this()
         {
             this.usuarioActual = usuario;
@@ -44,7 +34,6 @@ namespace UI.Desktop
 
         private void Autorizacion()
         {
-
             this.tsbNuevo.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 2, Validaciones.Permisos.Alta);
             this.tsbEliminar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 2, Validaciones.Permisos.Baja);
             this.tsbEditar.Enabled = Validaciones.HasAuthorization(usuarioActual.ID, 2, Validaciones.Permisos.Modificacion);
